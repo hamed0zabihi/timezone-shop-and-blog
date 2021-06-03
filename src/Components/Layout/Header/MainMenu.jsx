@@ -1,22 +1,24 @@
+import { Link } from "react-router-dom";
+
 const MainMenu = () => {
   return (
     <div className="main-menu d-none d-lg-block">
       <nav>
         <ul id="navigation">
           <li>
-            <a href="/index.html">Home</a>
+            <Link to="/">home</Link>
           </li>
           <li>
-            <a href="/shop.html">shop</a>
+            <a href="/shop">shop</a>
           </li>
           <li>
-            <a href="/about.html">about</a>
+            <Link to="/about">about</Link>
           </li>
           <li className="hot">
             <a href="/#">Latest</a>
             <ul className="submenu">
               <li>
-                <a href="/shop.html"> Product list</a>
+                <a href="/shop"> Product list</a>
               </li>
               <li>
                 <a href="/product_details.html"> Product Details</a>
