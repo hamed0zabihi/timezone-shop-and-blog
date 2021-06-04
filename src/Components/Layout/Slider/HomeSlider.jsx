@@ -2,13 +2,13 @@ import { Animated } from "react-animated-css";
 
 const HomeSlider = () => {
   return (
-    <div class="slider-area ">
-      <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center slide-bg">
-          <div class="container">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                <div class="hero__caption">
+    <div className="slider-area ">
+      <div className="slider-active">
+        <div className="single-slider slider-height d-flex align-items-center slide-bg">
+          <div className="container">
+            <div className="row justify-content-between align-items-center">
+              <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+                <div className="hero__caption">
                   <Animated
                     animationIn="fadeInLeft"
                     isVisible={true}
@@ -35,25 +35,25 @@ const HomeSlider = () => {
                     animationInDuration={2000}
                     animationDelay={0.8}
                   >
-                    <div class="hero__btn">
-                      <a href="industries.html" class="btn hero-btn">
+                    <div className="hero__btn">
+                      <a href="industries.html" className="btn hero-btn">
                         Shop Now
                       </a>
                     </div>
                   </Animated>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
+              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
                 <Animated
                   animationIn="bounceIn"
                   isVisible={true}
                   animationDelay={0.4}
                 >
-                  <div class="hero__img">
+                  <div className="hero__img">
                     <img
                       src="./images/hero/watch.png"
                       alt=""
-                      class=" heartbeat"
+                      className=" heartbeat"
                     />
                   </div>
                 </Animated>

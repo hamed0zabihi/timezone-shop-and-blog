@@ -1,7 +1,7 @@
 const LogoFooter = () => {
   return (
-    <div class="footer-logo">
-      <a href="index.html">
+    <div className="footer-logo">
+      <a href="/#">
         <img src="./images/logo/logo2_footer.png" alt="" />
       </a>
     </div>

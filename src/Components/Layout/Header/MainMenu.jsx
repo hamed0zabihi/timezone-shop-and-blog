@@ -21,7 +21,7 @@ const MainMenu = () => {
                 <a href="/shop"> Product list</a>
               </li>
               <li>
-                <a href="/product_details.html"> Product Details</a>
+                <Link to="/product"> Product Details</Link>
               </li>
             </ul>
           </li>

@@ -6,15 +6,15 @@ const Footer = () => {
     <>
       <footer>
         {/* <!-- Footer Start--> */}
-        <div class="footer-area footer-padding">
-          <div class="container">
-            <div class="row d-flex justify-content-between">
-              <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                <div class="single-footer-caption mb-50">
-                  <div class="single-footer-caption mb-30">
+        <div className="footer-area footer-padding">
+          <div className="container">
+            <div className="row d-flex justify-content-between">
+              <div className="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                <div className="single-footer-caption mb-50">
+                  <div className="single-footer-caption mb-30">
                     <LogoFooter />
-                    <div class="footer-tittle">
-                      <div class="footer-pera">
+                    <div className="footer-tittle">
+                      <div className="footer-pera">
                         <p>
                           Asorem ipsum adipolor sdit amet, consectetur
                           adipisicing elitcf sed do eiusmod tem.
@@ -24,9 +24,9 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                <div class="single-footer-caption mb-50">
-                  <div class="footer-tittle">
+              <div className="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                <div className="single-footer-caption mb-50">
+                  <div className="footer-tittle">
                     <h4>Quick Links</h4>
                     <ul>
                       <li>
@@ -45,9 +45,9 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                <div class="single-footer-caption mb-50">
-                  <div class="footer-tittle">
+              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                <div className="single-footer-caption mb-50">
+                  <div className="footer-tittle">
                     <h4>New Products</h4>
                     <ul>
                       <li>
@@ -66,9 +66,9 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                <div class="single-footer-caption mb-50">
-                  <div class="footer-tittle">
+              <div className="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                <div className="single-footer-caption mb-50">
+                  <div className="footer-tittle">
                     <h4>Support</h4>
                     <ul>
                       <li>
