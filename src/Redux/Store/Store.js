@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { GetArticles } from "../Actions/Blog/Articles/GetArticles";
+import GetProdcuts from "../Actions/Products/GetProductjs";
 import { reducers } from "../Reducers";
 
 export const Store = createStore(
@@ -12,5 +13,6 @@ export const Store = createStore(
 );
 //
 Store.dispatch(GetArticles());
+Store.dispatch(GetProdcuts());
 //subscribe
 Store.subscribe(() => console.log(Store.getState()));
