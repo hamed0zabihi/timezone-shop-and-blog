@@ -9,7 +9,7 @@ const TimeZone = () => {
     <Switch>
       <MainLayout>
         <Route path="/about" component={About} />
-        <Route path="/product" exact component={SingleProduct} />
+        <Route path="/product/:id" exact component={SingleProduct} />
         <Route path="/" exact component={Home} />
       </MainLayout>
     </Switch>
