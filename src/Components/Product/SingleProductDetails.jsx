@@ -1,22 +1,4 @@
-import { useState } from "react";
-
 const SingleProductDetails = () => {
-  const price = 5;
-  const [quantity, setquantity] = useState(1);
-  const [totalprice, settotalprice] = useState(0);
-  const handleIncDicrease = (type) => {
-    if (quantity >= 1 && type === "inc") {
-      return setquantity(quantity + 1), settotalprice((quantity + 1) * price);
-    } else if (quantity > 1 && type === "dic") {
-      return setquantity(quantity - 1), settotalprice((quantity - 1) * price);
-    }
-  };
-  const subtotal = () => {
-    const constsub = quantity * price;
-    return settotalprice(constsub);
-  };
-  console.log("total:", totalprice);
-  console.log("quantity:", quantity);
   return (
     <>
       <div className="col-lg-8">
@@ -39,27 +21,21 @@ const SingleProductDetails = () => {
             <div className="product_count_area">
               <p>Quantity</p>
               <div className="product_count d-inline-block">
-                <span className="product_count_item inumber-decrement" disabled>
-                  <i
-                    className="ti-minus"
-                    onClick={(e) => handleIncDicrease("dic")}
-                  ></i>
+                <span className="product_count_item inumber-decrement">
+                  <i className="ti-minus"></i>
                 </span>
                 <input
                   className="product_count_item input-number"
                   type="text"
                   min="0"
                   max="10"
-                  value={quantity}
+                  defaultValue="1"
                 />
                 <span className="product_count_item number-increment">
-                  <i
-                    className="ti-plus"
-                    onClick={(e) => handleIncDicrease("inc")}
-                  ></i>
+                  <i className="ti-plus"></i>
                 </span>
               </div>
-              <p>${totalprice}</p>
+              <p>$5</p>
             </div>
             <div className="add_to_cart">
               <a href="/#" className="btn_3">
