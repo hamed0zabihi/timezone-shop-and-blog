@@ -57,14 +57,14 @@ const SingleProductSlider = () => {
           <div>
             <img
               style={{ width: "100%" }}
-              src="./images/gallery/gallery01.png"
+              src="/images/gallery/gallery01.png"
               alt="#"
               className="img-fluid"
             />
           </div>
           <div style={{ width: "100%" }}>
             <img
-              src="./images/gallery/gallery1.png"
+              src="/images/gallery/gallery1.png"
               alt="#"
               className="img-fluid"
               style={{ width: "100%" }}
@@ -73,7 +73,7 @@ const SingleProductSlider = () => {
           <div>
             <img
               style={{ width: "100%" }}
-              src="./images/gallery/gallery01.png"
+              src="/images/gallery/gallery01.png"
               alt="#"
               className="img-fluid"
             />
