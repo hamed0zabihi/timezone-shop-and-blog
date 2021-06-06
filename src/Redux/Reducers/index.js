@@ -4,5 +4,5 @@ import LocalFakeData from "./LocalFakeData";
 
 export const reducers = combineReducers({
   Article: ArticleReducer,
-  ProductLocal: LocalFakeData,
+  ProductsLocal: LocalFakeData,
 });

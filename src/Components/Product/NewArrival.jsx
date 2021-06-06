@@ -1,4 +1,16 @@
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import _ from "lodash";
 const NewArrival = () => {
+  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const ThreeProducts = _(AllProducts)
+    .orderBy("createAt", "desc")
+    .take(3)
+    .value();
+  console.log(
+    "🚀 ~ file: NewArrival.jsx ~ line 6 ~ NewArrival ~ ThreeProducts",
+    ThreeProducts
+  );
   return (
     <>
       <section className="new-product-area section-padding30">
@@ -12,45 +24,21 @@ const NewArrival = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div className="single-new-pro mb-30 text-center">
-                <div className="product-img">
-                  <img src="./images/gallery/new_product1.png" alt="" />
-                </div>
-                <div className="product-caption">
-                  <h3>
-                    <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                  </h3>
-                  <span>$ 45,743</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div className="single-new-pro mb-30 text-center">
-                <div className="product-img">
-                  <img src="./images/gallery/new_product2.png" alt="" />
-                </div>
-                <div className="product-caption">
-                  <h3>
-                    <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                  </h3>
-                  <span>$ 45,743</span>
+            {ThreeProducts.map((el) => (
+              <div key={el.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div className="single-new-pro mb-30 text-center">
+                  <div className="product-img">
+                    <img src={el.image} alt={el.title} />
+                  </div>
+                  <div className="product-caption">
+                    <h3>
+                      <Link to={`/product/${el.id}`}>{el.title}</Link>
+                    </h3>
+                    <span>$ {el.price}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div className="single-new-pro mb-30 text-center">
-                <div className="product-img">
-                  <img src="./images/gallery/new_product3.png" alt="" />
-                </div>
-                <div className="product-caption">
-                  <h3>
-                    <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                  </h3>
-                  <span>$ 45,743</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
