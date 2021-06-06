@@ -7,15 +7,10 @@ const NewArrival = () => {
     .orderBy("createAt", "desc")
     .take(3)
     .value();
-  console.log(
-    "🚀 ~ file: NewArrival.jsx ~ line 6 ~ NewArrival ~ ThreeProducts",
-    ThreeProducts
-  );
   return (
     <>
       <section className="new-product-area section-padding30">
         <div className="container">
-          {/* <!-- Section tittle --> */}
           <div className="row">
             <div className="col-xl-12">
               <div className="section-tittle mb-70">

@@ -1,4 +1,13 @@
+import _ from "lodash";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const PopularProducts = () => {
+  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const PopularProducts = _(AllProducts)
+    .orderBy("sellNumber", "desc")
+    .take(6)
+    .value();
+
   return (
     //   Popular Items Start
     <div className="popular-items section-padding30">
@@ -17,120 +26,27 @@ const PopularProducts = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular1.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
+          {PopularProducts.map((el) => (
+            <div key={el.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+              <div className="single-popular-items mb-50 text-center">
+                <div className="popular-img">
+                  <img src={el.image} alt={el.title} />
+                  <div className="img-cap">
+                    <span>Add to cart</span>
+                  </div>
+                  <div className="favorit-items">
+                    <span className="flaticon-heart"></span>
+                  </div>
                 </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
+                <div className="popular-caption">
+                  <h3>
+                    <Link to={`/product/${el.id}`}>{el.title}</Link>
+                    <span>$ {el.price}</span>
+                  </h3>
                 </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
               </div>
             </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular2.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
-                </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
-                </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular3.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
-                </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
-                </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular4.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
-                </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
-                </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular5.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
-                </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
-                </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-            <div className="single-popular-items mb-50 text-center">
-              <div className="popular-img">
-                <img src="./images/gallery/popular6.png" alt="" />
-                <div className="img-cap">
-                  <span>Add to cart</span>
-                </div>
-                <div className="favorit-items">
-                  <span className="flaticon-heart"></span>
-                </div>
-              </div>
-              <div className="popular-caption">
-                <h3>
-                  <a href="product_details.html">Thermo Ball Etip Gloves</a>
-                </h3>
-                <span>$ 45,743</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         {/* <!-- Button --> */}
         <div className="row justify-content-center">
