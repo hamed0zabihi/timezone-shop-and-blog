@@ -28,6 +28,7 @@ const SingleProduct = ({ match }) => {
               price={price}
               quantity={quantity}
               description={description}
+              image={image}
             />
           </div>
         </div>
