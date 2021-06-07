@@ -69,7 +69,7 @@ const LocalFakeData = () => {
     {
       id: 7,
       title: "Vacheron Constantin",
-      image: "/images/gallery/popular7.png",
+      image: "/images/gallery/popular1.png",
       description:
         "What’s more, the Vacheron Constantin workshop only produces a limited number of pieces. This not only guarantees that each one is made with the highest level of care and attention but also accords the brand a level of exclusivity that can only come with rarity. Owning a Vacheron Constantin is like being admitted to an elite club.",
       createAt: "2021-05-07T07:11:33.530Z",
@@ -80,7 +80,7 @@ const LocalFakeData = () => {
     {
       id: 8,
       title: "Ulysse Nardin",
-      image: "/images/gallery/popular8.png",
+      image: "/images/gallery/popular2.png",
       description:
         "In 1985, Ulysse Nardin released the Astrolabium Galileo Galilei, a watch that was named by the Guinness Book of Records as the world’s most functional watch. It had 21 different functions, including tracking local and solar time, the orbits of the sun and moon, and the positions of the major stars.",
       createAt: "2021-05-08T08:11:33.530Z",
@@ -91,7 +91,7 @@ const LocalFakeData = () => {
     {
       id: 9,
       title: "Girard-Perregaux",
-      image: "/images/gallery/popular9.png",
+      image: "/images/gallery/popular3.png",
       description:
         "The brand is famous for its historic Esmerelda Tourbillon with three gold bridges, awarded a Gold Medal in 1889. And in 1971, the company presented the first quartz watch ever to be produced in Switzerland, and whose 32,768 Hertz frequency has become a benchmark for manufacturers around the world.",
       createAt: "2021-05-09T09:11:33.530Z",
