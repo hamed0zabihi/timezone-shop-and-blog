@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetSelectedProduct } from "../../Redux/Actions/Products/GetSelectedProduct";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
-
 import SingleProductDetails from "./SingleProductDetails";
 import SingleProductSlider from "./SingleProductSlider";
 import SubscribeSection from "./SubscribeSection";

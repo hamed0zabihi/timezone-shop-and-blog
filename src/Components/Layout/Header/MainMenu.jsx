@@ -9,7 +9,7 @@ const MainMenu = () => {
             <Link to="/">home</Link>
           </li>
           <li>
-            <a href="/shop">shop</a>
+            <Link to="/shop">shop</Link>
           </li>
           <li>
             <Link to="/about">about</Link>
