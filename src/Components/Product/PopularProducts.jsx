@@ -1,13 +1,14 @@
 import _ from "lodash";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 const PopularProducts = () => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
   const PopularProducts = _(AllProducts)
     .orderBy("sellNumber", "desc")
     .take(6)
     .value();
-
+  const dispatch = useDispatch();
   return (
     //   Popular Items Start
     <div className="popular-items section-padding30">
@@ -31,7 +32,10 @@ const PopularProducts = () => {
               <div className="single-popular-items mb-50 text-center">
                 <div className="popular-img">
                   <img src={el.image} alt={el.title} />
-                  <div className="img-cap">
+                  <div
+                    className="img-cap"
+                    onClick={() => dispatch(addProductToCart(el))}
+                  >
                     <span>Add to cart</span>
                   </div>
                   <div className="favorit-items">

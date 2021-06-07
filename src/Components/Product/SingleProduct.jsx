@@ -11,7 +11,7 @@ const SingleProduct = ({ match }) => {
   useEffect(() => {
     dispatch(GetSelectedProduct(match.params.id));
   }, []);
-  const { id, title, image, price, quantity, description } = {
+  const { id, title, image, price, inventory, description } = {
     ...SelectedProduct[0],
   };
   return (
@@ -25,9 +25,10 @@ const SingleProduct = ({ match }) => {
               id={id}
               title={title}
               price={price}
-              quantity={quantity}
+              inventory={inventory}
               description={description}
               image={image}
+              product={SelectedProduct[0]}
             />
           </div>
         </div>

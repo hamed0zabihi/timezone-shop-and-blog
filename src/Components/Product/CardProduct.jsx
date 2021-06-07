@@ -6,6 +6,8 @@ const CardProduct = ({
   id = "1",
   price = "45743",
 }) => {
+  // const dispatch = useDispatch();
+
   return (
     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
       <div className="single-popular-items mb-50 text-center">

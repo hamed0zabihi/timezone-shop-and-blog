@@ -1,21 +1,30 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 
 const SingleProductDetails = ({
   id,
   title,
   price,
-  quantity,
+  inventory,
   description,
   image,
+  product,
 }) => {
   const [numberOfProduct, setnumberOfProduct] = useState(1);
   const handleIncDecProduct = (type) => {
-    if (type === "inc" && numberOfProduct < quantity) {
+    if (type === "inc" && numberOfProduct < inventory) {
       return setnumberOfProduct(numberOfProduct + 1);
     } else if (type === "dec" && numberOfProduct > 1) {
       return setnumberOfProduct(numberOfProduct - 1);
     }
   };
+  const dispatch = useDispatch();
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(addProductToCart(product, numberOfProduct));
+  };
+
   return (
     <>
       <div className="col-lg-8">
@@ -50,7 +59,7 @@ const SingleProductDetails = ({
               <p>${price * numberOfProduct}</p>
             </div>
             <div className="add_to_cart">
-              <a href="/#" className="btn_3">
+              <a href="/#" className="btn_3" onClick={handleAddToCart}>
                 add to cart
               </a>
             </div>

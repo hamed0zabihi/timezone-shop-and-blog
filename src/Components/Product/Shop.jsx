@@ -23,7 +23,8 @@ const Shop = () => {
   };
   //set perpage
   const handlePerPageg = (id) => {
-    return setPerPage(id), setCurrentPage(1);
+    setPerPage(id);
+    setCurrentPage(1);
   };
   //filter base popular newest high-price
   const handleSorting = (fieldName) => {
