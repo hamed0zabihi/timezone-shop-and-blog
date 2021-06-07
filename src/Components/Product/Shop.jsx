@@ -1,19 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ShopMethodContainer from "../Home/ShopMethodContainer";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import { Paginate } from "../Utils/Paginate";
 import Pagination from "../Utils/Pagination";
 import CardProduct from "./CardProduct";
+import { orderBy } from "lodash";
 const Shop = () => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
+
+  const [filterProducts, setfilterProducts] = useState([]);
+  useEffect(() => {
+    setfilterProducts(AllProducts);
+  }, [AllProducts]);
   const [CurrentPage, setCurrentPage] = useState(1);
   const [PerPage, setPerPage] = useState(6);
+  const [sortingMode, setsortingMode] = useState("");
+
   //set currentpage
   const handleCurrentPage = (id) => {
     return setCurrentPage(id);
   };
-  const ProductsPaginated = Paginate(AllProducts, PerPage, CurrentPage);
+  //set perpage
+  const handlePerPageg = (id) => {
+    return setPerPage(id), setCurrentPage(1);
+  };
+  //filter base popular newest high-price
+  const handleSorting = (fieldName) => {
+    console.log("filedname,", filterProducts);
+    setfilterProducts(orderBy(filterProducts, fieldName, "desc"));
+    setsortingMode(fieldName);
+  };
+  const ProductsPaginated = Paginate(filterProducts, PerPage, CurrentPage);
   return (
     <main>
       {/* <!-- Hero Area Start--> */}
@@ -27,41 +45,37 @@ const Shop = () => {
               {/* <!--Nav Button  --> */}
               <nav>
                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a
-                    className="nav-item nav-link active"
-                    id="nav-home-tab"
-                    data-toggle="tab"
-                    href="#nav-home"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
+                  <button
+                    className={
+                      sortingMode === "createAt"
+                        ? "nav-link active"
+                        : "nav-item nav-link genric-btn default-border"
+                    }
+                    onClick={() => handleSorting("createAt")}
                   >
                     NewestArrivals
-                  </a>
-                  <a
-                    className="nav-item nav-link"
-                    id="nav-profile-tab"
-                    data-toggle="tab"
-                    href="#nav-profile"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
+                  </button>
+                  <button
+                    className={
+                      sortingMode === "price"
+                        ? "nav-link active"
+                        : "nav-item nav-link genric-btn default-border"
+                    }
+                    onClick={() => handleSorting("price")}
                   >
-                    {" "}
                     Price high to low
-                  </a>
-                  <a
-                    className="nav-item nav-link"
-                    id="nav-contact-tab"
-                    data-toggle="tab"
-                    href="#nav-contact"
-                    role="tab"
-                    aria-controls="nav-contact"
-                    aria-selected="false"
+                  </button>
+                  <button
+                    className={
+                      sortingMode === "sellNumber"
+                        ? "nav-link active"
+                        : "nav-item nav-link genric-btn default-border"
+                    }
+                    onClick={() => handleSorting("sellNumber")}
                   >
                     {" "}
                     Most populer{" "}
-                  </a>
+                  </button>
                 </div>
               </nav>
               {/* <!--End Nav Button  --> */}
@@ -72,11 +86,16 @@ const Shop = () => {
             <div className="select-this">
               <form action="#">
                 <div className="select-itms">
-                  <select name="select" className="nice-select" id="select1">
-                    <option className="option" value="">
+                  <select
+                    name="select"
+                    className="nice-select"
+                    id="select1"
+                    onChange={(e) => handlePerPageg(e.target.value)}
+                  >
+                    <option className="option" value="6">
                       6 per page
                     </option>
-                    <option className="option" value="">
+                    <option className="option" value="12">
                       12 per page
                     </option>
                   </select>
