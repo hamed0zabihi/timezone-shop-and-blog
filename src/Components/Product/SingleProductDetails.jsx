@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 
 const SingleProductDetails = ({
@@ -24,7 +25,9 @@ const SingleProductDetails = ({
     e.preventDefault();
     dispatch(addProductToCart(product, numberOfProduct));
   };
-
+  const cart = useSelector((state) => state.cart);
+  const isExistProductToCart = cart.find((el) => el.id === id);
+  if (isExistProductToCart) console.log("isExistProductToCart", true);
   return (
     <>
       <div className="col-lg-8">
@@ -59,9 +62,15 @@ const SingleProductDetails = ({
               <p>${price * numberOfProduct}</p>
             </div>
             <div className="add_to_cart">
-              <a href="/#" className="btn_3" onClick={handleAddToCart}>
-                add to cart
-              </a>
+              {isExistProductToCart ? (
+                <Link to="/cart" className="btn_3">
+                  check in cart
+                </Link>
+              ) : (
+                <button className="btn_3" onClick={handleAddToCart}>
+                  add to cart
+                </button>
+              )}
             </div>
           </div>
         </div>

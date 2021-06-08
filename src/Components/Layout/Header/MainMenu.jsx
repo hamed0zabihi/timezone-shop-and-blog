@@ -43,7 +43,7 @@ const MainMenu = () => {
                 <a href="/login.html">Login</a>
               </li>
               <li>
-                <a href="/cart.html">Cart</a>
+                <Link to="/cart">cart</Link>
               </li>
               <li>
                 <a href="/elements.html">Element</a>
