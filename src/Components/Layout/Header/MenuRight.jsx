@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { isEmpty } from "lodash";
 import { Link } from "react-router-dom";
 const MenuRight = () => {
-  const cart = useSelector((state) => state.cart);
+  const { cart, user } = useSelector((state) => state);
 
   return (
     <div className="header-right">
@@ -13,9 +13,12 @@ const MenuRight = () => {
           </div>
         </li>
         <li>
-          {" "}
           <Link to="/login">
-            <span className="flaticon-user"></span>
+            <span
+              className={
+                !isEmpty(user) ? "flaticon-user text-info" : "flaticon-user "
+              }
+            ></span>
           </Link>
         </li>
         <li>
