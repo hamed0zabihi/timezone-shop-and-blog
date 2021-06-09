@@ -14,9 +14,9 @@ const MenuRight = () => {
         </li>
         <li>
           {" "}
-          <a href="/login.html">
+          <Link to="/login">
             <span className="flaticon-user"></span>
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/cart">

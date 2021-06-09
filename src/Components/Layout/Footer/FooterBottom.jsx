@@ -6,7 +6,7 @@ const FooterBottom = () => {
           <p>
             Copyright &copy;2021 All rights reserved | This template is made
             with <i className="fa fa-heart" aria-hidden="true"></i> by{" "}
-            <a href="https://colorlib.com" target="_blank">
+            <a href="https://colorlib.com" target="_blank" rel="noreferrer">
               Colorlib
             </a>
           </p>

@@ -1,6 +1,5 @@
 export const Cart = (state = [], action) => {
   //   let doesItemExist= false;
-  console.log("payload", action.payload);
   let doesItemExist = false;
   switch (action.type) {
     case "ADD_TO_CART":

@@ -15,10 +15,10 @@ const MainMenu = () => {
             <Link to="/about">about</Link>
           </li>
           <li className="hot">
-            <a href="/#">Latest</a>
+            <Link to="/"> Latest</Link>
             <ul className="submenu">
               <li>
-                <a href="/shop"> Product list</a>
+                <Link to="/shop"> Product list</Link>
               </li>
               <li>
                 <Link to="/product"> Product Details</Link>
@@ -26,38 +26,38 @@ const MainMenu = () => {
             </ul>
           </li>
           <li>
-            <a href="/blog.html">Blog</a>
+            <Link to="/"> Product Details</Link>
             <ul className="submenu">
               <li>
-                <a href="/blog.html">Blog</a>
+                <Link to="/"> Blog</Link>
               </li>
               <li>
-                <a href="/blog-details.html">Blog Details</a>
+                <Link to="/="> Blog Details</Link>
               </li>
             </ul>
           </li>
           <li>
-            <a href="/#">Pages</a>
+            <Link to="/">Pages</Link>
             <ul className="submenu">
               <li>
-                <a href="/login.html">Login</a>
+                <Link to="/"> Product Details</Link>
               </li>
               <li>
                 <Link to="/cart">cart</Link>
               </li>
               <li>
-                <a href="/elements.html">Element</a>
+                <Link to="/">Element</Link>
               </li>
               <li>
-                <a href="/confirmation.html">Confirmation</a>
+                <Link to="/">Confirmation</Link>
               </li>
               <li>
-                <a href="/checkout.html">Product Checkout</a>
+                <Link to="/">Product Checkout</Link>
               </li>
             </ul>
           </li>
           <li>
-            <a href="/contact.html">Contact</a>
+            <Link to="/">Contact</Link>
           </li>
         </ul>
       </nav>

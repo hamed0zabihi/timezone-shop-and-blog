@@ -111,6 +111,7 @@ const Shop = () => {
             <div className="row">
               {ProductsPaginated.map((el) => (
                 <CardProduct
+                  key={el.id}
                   id={el.id}
                   title={el.title}
                   image={el.image}

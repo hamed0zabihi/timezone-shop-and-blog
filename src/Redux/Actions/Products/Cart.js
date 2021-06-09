@@ -1,5 +1,5 @@
 const initial = [];
-export const addProductToCart = (product, quantity = 1) => {
+export const addProductToCart = (product = initial, quantity = 1) => {
   return { type: "ADD_TO_CART", payload: { ...product, quantity: quantity } };
 };
 export const removeProductFromCart = (id) => {

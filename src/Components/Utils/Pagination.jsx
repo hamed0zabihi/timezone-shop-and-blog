@@ -4,15 +4,20 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
   if (countNumber === 1) return null;
   const PageCounter = range(1, countNumber + 1);
   return (
-    <nav aria-label="Page navigation example ">
-      <ul className="pagination pg-blue justify-content-center">
-        <li className={CurrentPage > 1 ? "page-item " : "page-item disabled"}>
+    <nav aria-label="blog-pagination justify-content-center d-flex ">
+      {/* Page navigation example */}
+      <ul className="pagination ">
+        <li
+          className={
+            CurrentPage > 1 ? "page-item " : "page-item disabled no-drop"
+          }
+        >
           <a
+            href="/#"
             className="page-link"
-            tabindex="-1"
             onClick={() => handlePagination(CurrentPage - 1)}
           >
-            Previous
+            <i className="ti-angle-left"></i>
           </a>
         </li>
         {PageCounter.map((el) => (
@@ -21,19 +26,24 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
             onClick={() => handlePagination(el)}
             className={el === CurrentPage ? "page-item active" : "page-item"}
           >
-            <a className="page-link">{el}</a>
+            <a href="/#" className="page-link">
+              {el}
+            </a>
           </li>
         ))}
         <li
           className={
-            CurrentPage < countNumber ? "page-item " : "page-item disabled"
+            CurrentPage < countNumber
+              ? "page-item "
+              : "page-item disabled no-drop"
           }
         >
           <a
+            href="/#"
             className="page-link"
             onClick={() => handlePagination(CurrentPage + 1)}
           >
-            Next
+            <i className="ti-angle-right"></i>
           </a>
         </li>
       </ul>

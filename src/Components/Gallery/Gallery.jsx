@@ -1,4 +1,8 @@
 const Gallery = () => {
+  const imageOne = "./images/gallery/gallery1.png";
+  const imageTwo = "./images/gallery/gallery2.png";
+  const imageThree = "./images/gallery/gallery3.png";
+  const imageFour = "./images/gallery/gallery4.png";
   return (
     <div className="gallery-area">
       <div className="container-fluid p-0 fix">
@@ -8,8 +12,7 @@ const Gallery = () => {
               <div
                 className="gallery-img big-img"
                 style={{
-                  backgroundImage:
-                    "url(" + "./images/gallery/gallery1.png" + ")",
+                  backgroundImage: `url( ${imageOne} )`,
                 }}
               ></div>
             </div>
@@ -19,8 +22,7 @@ const Gallery = () => {
               <div
                 className="gallery-img big-img"
                 style={{
-                  backgroundImage:
-                    "url(" + "./images/gallery/gallery2.png" + ")",
+                  backgroundImage: `url( ${imageTwo} )`,
                 }}
               ></div>
             </div>
@@ -32,8 +34,7 @@ const Gallery = () => {
                   <div
                     className="gallery-img small-img"
                     style={{
-                      backgroundImage:
-                        "url(" + "./images/gallery/gallery3.png" + ")",
+                      backgroundImage: `url( ${imageThree} )`,
                     }}
                   ></div>
                 </div>
@@ -43,8 +44,7 @@ const Gallery = () => {
                   <div
                     className="gallery-img small-img"
                     style={{
-                      backgroundImage:
-                        "url(" + "./images/gallery/gallery4.png" + ")",
+                      backgroundImage: `url( ${imageFour} )`,
                     }}
                   ></div>
                 </div>

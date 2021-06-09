@@ -121,9 +121,6 @@ const CartProducts = () => {
           </tbody>
         </table>
         <div className="checkout_btn_inner float-right">
-          {/* <a className="btn_1" href="/#">
-        Continue Shopping
-      </a> */}
           <a className="btn_1 checkout_btn_1" href="/#">
             Proceed to checkout
           </a>
