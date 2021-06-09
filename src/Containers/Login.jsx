@@ -1,11 +1,50 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { LoginUser } from "../Apis/User";
 import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 
 const Login = () => {
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
+  const [rememberme, setrememberme] = useState();
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const user = {
+      name: "hamed zabihi",
+      email: email,
+      password: password,
+    };
 
+    try {
+      const { status, data } = await LoginUser(user);
+      //mockapi.io dont feature for get one user base username and password
+      if (status === 200 && data && data.length) {
+        toast.success(" login success ", {
+          position: "top-right",
+          onClose: true,
+        });
+      }
+      if (status === 200 && data.length === 0) {
+        toast.error(" user not found ", {
+          position: "top-right",
+          onClose: true,
+        });
+      }
+      console.log("🚀 ~ file: Login.jsx ~ line 19 ~ handleLogin ~ data", data);
+      console.log(
+        "🚀 ~ file: Login.jsx ~ line 19 ~ handleLogin ~ status",
+        status
+      );
+    } catch (exp) {
+      toast.error("failed", {
+        position: "top-right",
+        onClose: true,
+      });
+
+      console.log(exp);
+    }
+  };
   return (
     <main>
       <BigHeroTitle name="Login" />
@@ -36,6 +75,7 @@ const Login = () => {
                     Please Sign in now
                   </h3>
                   <form
+                    onSubmit={handleLogin}
                     className="row contact_form"
                     action="/#"
                     method="post"
@@ -65,7 +105,15 @@ const Login = () => {
                     </div>
                     <div className="col-md-12 form-group">
                       <div className="creat_account d-flex align-items-center">
-                        <input type="checkbox" id="f-option" name="selector" />
+                        <input
+                          type="checkbox"
+                          id="f-option"
+                          name="selector"
+                          value={rememberme}
+                          onChange={(e) =>
+                            setrememberme(e.currentTarget.checked)
+                          }
+                        />
                         <label htmlFor="f-option">Remember me</label>
                       </div>
                       <button type="submit" value="submit" className="btn_3">

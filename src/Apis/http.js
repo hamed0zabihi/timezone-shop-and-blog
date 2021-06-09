@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.interceptors.response.use(
   (response) => {
     if (response.status === 200 || response.status === 201) {
