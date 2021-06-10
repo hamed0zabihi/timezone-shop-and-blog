@@ -52,7 +52,7 @@ const MainMenu = () => {
                 <Link to="/">Confirmation</Link>
               </li>
               <li>
-                <Link to="/">Product Checkout</Link>
+                <Link to="/checkout">Product Checkout</Link>
               </li>
             </ul>
           </li>
