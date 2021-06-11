@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { LoginUser } from "../../Apis/User";
 import { AddUser } from "../../Redux/Actions/User";
@@ -91,7 +91,7 @@ const CheckOutLogin = () => {
                 name="selector"
                 onChange={(e) => setremmemberme(e.currentTarget.checked)}
               />
-              <label for="f-option">Remember me</label>
+              <label htmlFor="f-option">Remember me</label>
             </div>
             <a className="lost_pass" href="/#">
               Lost your password?

@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import CheckOutLogin from "./CheckOutLogin";
 import OrderBox from "./CheckOutOrderBox";
-
+import CheckOutRegister from "./CheckOutRegister";
+import { isEmpty } from "lodash";
 const CheckOut = () => {
+  const isUserExist = useSelector((state) => state.user);
   return (
     <main>
       <BigHeroTitle name="Check Out" />
@@ -21,7 +24,7 @@ const CheckOut = () => {
               Billing & Shipping section.
             </p>
             {/* {checkoutlogin} */}
-            <CheckOutLogin />
+            {isEmpty(isUserExist) ? <CheckOutLogin /> : "user logined"}
           </div>
           <div className="cupon_area">
             <div className="check_title">
@@ -39,7 +42,9 @@ const CheckOut = () => {
             <div className="row">
               <div className="col-lg-8">
                 <h3>Billing Details</h3>
+                {isEmpty(isUserExist) ? <CheckOutRegister /> : "user exist"}
               </div>
+
               <div className="col-lg-4">
                 <OrderBox />
               </div>

@@ -57,7 +57,7 @@ const OrderBox = () => {
       <div className="payment_item">
         <div className="radion_btn">
           <input type="radio" id="f-option5" name="selector" />
-          <label for="f-option5">Check payments</label>
+          <label htmlFor="f-option5">Check payments</label>
           <div className="check"></div>
         </div>
         <p>
@@ -68,7 +68,7 @@ const OrderBox = () => {
       <div className="payment_item active">
         <div className="radion_btn">
           <input type="radio" id="f-option6" name="selector" />
-          <label for="f-option6">Paypal </label>
+          <label htmlFor="f-option6">Paypal </label>
           <img src="/images/product/single-product/card.jpg" alt="" />
           <div className="check"></div>
         </div>
@@ -79,7 +79,7 @@ const OrderBox = () => {
       </div>
       <div className="creat_account">
         <input type="checkbox" id="f-option4" name="selector" />
-        <label for="f-option4">I’ve read and accept the </label>
+        <label htmlFor="f-option4">I’ve read and accept the </label>
         <a href="/#">terms & conditions*</a>
       </div>
       <a className="btn_3" href="/#">
