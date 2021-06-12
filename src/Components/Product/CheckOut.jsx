@@ -12,19 +12,24 @@ const CheckOut = () => {
       <section className="checkout_area section_padding">
         <div className="container">
           <div className="returning_customer">
-            <div className="check_title">
-              <h2>
-                Returning Customer?
-                <a href="/login">Click here to login</a>
-              </h2>
-            </div>
-            <p>
-              If you have shopped with us before, please enter your details in
-              the boxes below. If you are a new customer, please proceed to the
-              Billing & Shipping section.
-            </p>
-            {/* {checkoutlogin} */}
-            {isEmpty(isUserExist) ? <CheckOutLogin /> : "user logined"}
+            {isEmpty(isUserExist) ? (
+              <>
+                <div className="check_title">
+                  <h2>
+                    Returning Customer?
+                    <a href="/login">Click here to login</a>
+                  </h2>
+                </div>
+                <p>
+                  If you have shopped with us before, please enter your details
+                  in the boxes below. If you are a new customer, please proceed
+                  to the Billing & Shipping section.
+                </p>
+                <CheckOutLogin />
+              </>
+            ) : (
+              ` user logined: ${isUserExist.name}`
+            )}
           </div>
           <div className="cupon_area">
             <div className="check_title">

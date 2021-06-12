@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { RegisterUser } from "../../Apis/User";
@@ -17,7 +17,8 @@ const CheckOutRegister = () => {
   const [city, setcity] = useState("");
   const [ordernote, setordernote] = useState("");
   const [loading, setloading] = useState(false);
-
+  const [isSubscribed, setisSubscribed] = useState(true);
+  const [datauserdispatch, setdatauserdispatch] = useState({});
   const handleSubmitForRegister = async (event) => {
     event.preventDefault();
     const finaladdress = {
@@ -40,8 +41,13 @@ const CheckOutRegister = () => {
           position: "top-right",
           onClose: true,
         });
-        // dispatch(AddUser(data));
+
+        if (isSubscribed) {
+          setdatauserdispatch(data);
+          // dispatch(AddUser(data));
+        }
         setloading(false);
+        setisSubscribed(false);
       } else if (status !== 201) {
         toast.warining("error", {
           position: "top-right",
@@ -59,6 +65,13 @@ const CheckOutRegister = () => {
       });
     }
   };
+  // for solve error: To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
+  useEffect(() => {
+    dispatch(AddUser(datauserdispatch));
+    return () => {
+      setdatauserdispatch();
+    };
+  }, [datauserdispatch]);
   return (
     <>
       {loading ? (
