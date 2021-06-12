@@ -18,7 +18,7 @@ const CheckOutRegister = () => {
   const [ordernote, setordernote] = useState("");
   const [loading, setloading] = useState(false);
   const [isSubscribed, setisSubscribed] = useState(true);
-  const [datauserdispatch, setdatauserdispatch] = useState({});
+  const [datauserdispatch, setdatauserdispatch] = useState();
   const handleSubmitForRegister = async (event) => {
     event.preventDefault();
     const finaladdress = {
@@ -72,6 +72,7 @@ const CheckOutRegister = () => {
       setdatauserdispatch();
     };
   }, [datauserdispatch]);
+  console.log("datauserdispatch", datauserdispatch);
   return (
     <>
       {loading ? (

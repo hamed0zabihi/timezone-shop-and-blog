@@ -33,7 +33,7 @@ const Login = () => {
           onClose: true,
         });
 
-        dispatch(AddUser(data));
+        dispatch(AddUser(data[0]));
         setloading(false);
       }
       if (status === 200 && data.length === 0) {

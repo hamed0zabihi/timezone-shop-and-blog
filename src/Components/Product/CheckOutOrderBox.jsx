@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { isEmpty } from "lodash";
 
-const OrderBox = () => {
+const OrderBox = ({ user }) => {
+  const [terms, setterms] = useState(false);
   const { cart } = useSelector((state) => state);
   const [shoppingprice, setshoppingprice] = useState(500);
   return (
@@ -78,13 +80,24 @@ const OrderBox = () => {
         </p>
       </div>
       <div className="creat_account">
-        <input type="checkbox" id="f-option4" name="selector" />
+        <input
+          type="checkbox"
+          id="f-option4"
+          name="selector"
+          onChange={(e) => {
+            setterms(e.currentTarget.checked);
+          }}
+        />
         <label htmlFor="f-option4">I’ve read and accept the </label>
         <a href="/#">terms & conditions*</a>
       </div>
-      <a className="btn_3" href="/#">
-        Proceed to Paypal
-      </a>
+      {!isEmpty(user) ? (
+        <a className="btn_3" href="/#">
+          Proceed to Paypal
+        </a>
+      ) : (
+        "first register or login"
+      )}
     </div>
   );
 };

@@ -7,8 +7,8 @@ import PreLoadings from "../Utils/PreLoadings";
 
 const CheckOutLogin = () => {
   const dispatch = useDispatch();
-  const [email, setemail] = useState();
-  const [password, setpassword] = useState();
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
   const [remmemberme, setremmemberme] = useState(false);
   const [loading, setloading] = useState(false);
   const handleLogin = async (e) => {
@@ -18,7 +18,8 @@ const CheckOutLogin = () => {
       const dataUser = { email: email, password: password };
       const { data, status } = await LoginUser(dataUser);
       if (status === 200 && data.length) {
-        dispatch(AddUser(data));
+        // fake api don't feature for check email- response return an array of objects emails
+        dispatch(AddUser(data[0]));
         setloading(false);
         toast.success(" login success ", {
           position: "top-right",
