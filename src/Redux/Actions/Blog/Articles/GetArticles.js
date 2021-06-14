@@ -5,7 +5,6 @@ export const GetArticles = () => {
     const { data, status } = await getArticlesFromApi();
     if (status === 200) {
       await dispatch({ type: "GET_ARTICLES", payload: data });
-      console.log("🚀 ~ file: GetArticles.js ~ line 8 ~ return ~ data", data);
     }
   };
 };

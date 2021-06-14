@@ -62,6 +62,7 @@ const CartProducts = () => {
                       value={el.quantity}
                       min="0"
                       max={el.inventory}
+                      readOnly
                     />
                     <div>
                       <span
