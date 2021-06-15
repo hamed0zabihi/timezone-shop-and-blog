@@ -1,19 +1,25 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 
 const CardProduct = ({
   title = "Thermo Ball Etip Gloves",
   image = "/images/gallery/popular1.png",
   id = "1",
   price = "45743",
+  product,
 }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
       <div className="single-popular-items mb-50 text-center">
         <div className="popular-img">
           <img src={image} alt={title} />
-          <div className="img-cap">
+          <div
+            className="img-cap"
+            onClick={() => dispatch(addProductToCart(product))}
+          >
             <span>Add to cart</span>
           </div>
           <div className="favorit-items">

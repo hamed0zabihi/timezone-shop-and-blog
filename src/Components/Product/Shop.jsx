@@ -116,13 +116,10 @@ const Shop = () => {
                   title={el.title}
                   image={el.image}
                   price={el.price}
+                  product={el}
                 />
               ))}
             </div>
-
-            {/* <!-- Card two --> */}
-
-            {/* <!-- Card three --> */}
           </div>
           {/* <!-- pagination --> */}
           <div className="row justify-content-center  mt-70">
