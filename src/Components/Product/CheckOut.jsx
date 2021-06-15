@@ -40,11 +40,17 @@ const CheckOut = () => {
                 <div className="check_title">
                   <h2>
                     Have a coupon?
-                    <a href="/#">Click here to enter your code</a>
+                    <a href="/#" onClick={(e) => e.preventDefault()}>
+                      Click here to enter your code
+                    </a>
                   </h2>
                 </div>
                 <input type="text" placeholder="Enter coupon code" />
-                <a className="tp_btn" href="/#">
+                <a
+                  className="tp_btn"
+                  href="/#"
+                  onClick={(e) => e.preventDefault()}
+                >
                   Apply Coupon
                 </a>
               </div>

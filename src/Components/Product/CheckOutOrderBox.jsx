@@ -6,7 +6,7 @@ import { createOrder } from "../../Apis/Product";
 import { toast } from "react-toastify";
 import { OrderCreate } from "../../Redux/Actions/Products/Order";
 import { clearCart } from "../../Redux/Actions/Products/Cart";
-
+import { Link } from "react-router-dom";
 const OrderBox = ({ user }) => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -76,18 +76,18 @@ const OrderBox = ({ user }) => {
         {cart.map((el, index) => (
           <>
             <li key={index}>
-              <a href="/#">
+              <Link to={`/product/${el.id}`}>
                 {el.title}
                 <span className="middle">x {el.quantity}</span>
                 <span className="last">{el.price}</span>
-              </a>
+              </Link>
             </li>
           </>
         ))}
       </ul>
       <ul className="list list_2">
         <li>
-          <a href="/#">
+          <a href="/#" onClick={(e) => e.preventDefault()}>
             Subtotal
             <span>
               ${cart.reduce((x, el) => x + el.price * el.quantity, 0)}
@@ -95,13 +95,13 @@ const OrderBox = ({ user }) => {
           </a>
         </li>
         <li>
-          <a href="/#">
+          <a href="/#" onClick={(e) => e.preventDefault()}>
             Shipping
             <span>Flat rate: ${shoppingprice}</span>
           </a>
         </li>
         <li>
-          <a href="/#">
+          <a href="/#" onClick={(e) => e.preventDefault()}>
             Total
             <span>
               $
@@ -159,7 +159,7 @@ const OrderBox = ({ user }) => {
         <a href="/#">terms & conditions*</a>
       </div>
       {!isEmpty(user) ? (
-        <button className="tp_btn" onClick={handleOrder}>
+        <button className="btn_3 mx-auto" onClick={handleOrder}>
           Proceed to Paypal
         </button>
       ) : (

@@ -94,7 +94,11 @@ const CheckOutLogin = () => {
               />
               <label htmlFor="f-option">Remember me</label>
             </div>
-            <a className="lost_pass" href="/#">
+            <a
+              className="lost_pass"
+              href="/#"
+              onClick={(e) => e.preventDefault()}
+            >
               Lost your password?
             </a>
           </div>

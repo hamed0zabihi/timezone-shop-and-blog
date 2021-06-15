@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 
 const CheckOutConfirmation = () => {
@@ -79,7 +80,9 @@ const CheckOutConfirmation = () => {
                     {order.orderDetails.map((el) => (
                       <tr key={el.id}>
                         <th colSpan="2">
-                          <span>{el.title}</span>
+                          <Link to={`product/${el.id}`}>
+                            <span>{el.title}</span>
+                          </Link>
                         </th>
                         <th>x{el.quantity}</th>
                         <th>
