@@ -13,7 +13,6 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
           }
         >
           <a
-            href="/#"
             className="page-link"
             onClick={() => handlePagination(CurrentPage - 1)}
           >
@@ -26,7 +25,12 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
             onClick={() => handlePagination(el)}
             className={el === CurrentPage ? "page-item active" : "page-item"}
           >
-            <a href="/#" className="page-link">
+            <a
+              className="page-link"
+              onClick={() => {
+                handlePagination(el);
+              }}
+            >
               {el}
             </a>
           </li>
@@ -39,7 +43,6 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
           }
         >
           <a
-            href="/#"
             className="page-link"
             onClick={() => handlePagination(CurrentPage + 1)}
           >
