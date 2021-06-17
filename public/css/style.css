@@ -9817,3 +9817,13 @@ input:focus {
     margin-right: 2px !important;
   }
 }
+.back-to-up {
+  position: fixed;
+  z-index: 2147483647;
+  display: block;
+}
+.back-to-up-hidden {
+  position: fixed;
+  z-index: 2147483647;
+  display: none;
+}

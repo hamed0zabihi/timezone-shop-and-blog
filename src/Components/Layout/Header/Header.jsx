@@ -18,9 +18,7 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleSticky);
   }, []);
-  if (sticky) {
-    console.log("stiky", sticky);
-  }
+
   return (
     <>
       <header>
