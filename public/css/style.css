@@ -9712,3 +9712,108 @@ input:focus {
 .no-drop {
   cursor: no-drop;
 }
+.navbar-expand-xl .navbar-nav .nav-link {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #141517;
+  font-weight: 600;
+  padding: 33px 21px !important;
+  display: inline-block;
+  text-transform: capitalize;
+  display: block;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+/* .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+} */
+.slicknav_icon-bar {
+  background-color: #ff2020 !important;
+}
+
+#navbarSupportedContentXL .hot::before {
+  position: absolute;
+  content: "HOT";
+  background: #ff003c;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 10px;
+  top: 7px;
+  /* right: 50%; */
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.slicknav_icon::before {
+  background: transparent;
+  width: 1.125em;
+  height: 0.875em;
+  display: block;
+  content: "";
+  position: absolute;
+}
+.slicknav_icon {
+  margin-right: 6px;
+  margin-top: 3px;
+  position: relative;
+  right: 5px;
+  top: -5px;
+  padding-bottom: 3px;
+}
+.slicknav_icon-bar {
+  background-color: #ffffff;
+  height: 3px;
+  margin: 5px 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  width: 30px;
+  position: relative;
+}
+
+@media (max-width: 575px) {
+  .header-sticky.sticky-bar.sticky .header-right {
+    display: contents !important;
+  }
+  .header-area .main-header .menu-wrapper .header-right {
+    bottom: 0 !important;
+  }
+}
+@media (max-width: 1199px) {
+  #navigation {
+    position: fixed;
+    background-color: #fff;
+    width: 100% !important;
+    left: 0;
+    z-index: 2;
+    padding: 17px;
+  }
+  .main-menu ul li a,
+  .navbar-expand-xl .navbar-nav .nav-link {
+    font-size: 15px !important;
+    padding: 7px 10px !important;
+  }
+  #navbarSupportedContentXL .hot {
+    display: none;
+  }
+  .menu-wrapper .logo {
+    flex: 1 0 auto;
+  }
+  .main-menu {
+    order: 3;
+  }
+  .header-area .main-header .menu-wrapper .header-right {
+    margin-right: 2px !important;
+  }
+}

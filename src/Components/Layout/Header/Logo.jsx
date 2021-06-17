@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 const Logo = () => {
   return (
     <div className="logo">
-      <a href="index.html">
+      <Link to="/">
         <img src="./images/logo/logo.png" alt="" />
-      </a>
+      </Link>
     </div>
   );
 };

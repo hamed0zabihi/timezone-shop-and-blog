@@ -5,7 +5,7 @@ const MenuRight = () => {
   const { cart, user } = useSelector((state) => state);
 
   return (
-    <div className="header-right">
+    <div className="header-right ">
       <ul>
         <li>
           <div className="nav-search search-switch">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import MainMenu from "./MainMenu";
+import MainMenu1 from "./MainMenu1";
 import MenuRight from "./MenuRight";
 
 const Header = () => {
@@ -34,7 +35,8 @@ const Header = () => {
             <div className="container-fluid">
               <div className="menu-wrapper">
                 <Logo />
-                <MainMenu />
+
+                <MainMenu1 />
                 <MenuRight />
               </div>
               <div className="col-12">
