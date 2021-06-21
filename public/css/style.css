@@ -9827,3 +9827,6 @@ input:focus {
   z-index: 2147483647;
   display: none;
 }
+.check-box-outline-color{
+  outline: 1px solid #ff2020;
+}

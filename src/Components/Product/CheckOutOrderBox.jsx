@@ -11,11 +11,13 @@ const OrderBox = ({ user }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [terms, setterms] = useState(false);
+  const [onceSubmited, setonceSubmited] = useState(false);
   const [paymentMethod, setpaymentMethod] = useState("Paypal");
   const { cart } = useSelector((state) => state);
   const [shoppingprice, setshoppingprice] = useState(500);
   const handleOrder = async (event) => {
     event.preventDefault();
+    setonceSubmited(true);
     const today = new Date();
     console.log("todey", today.toISOString());
     const order = {
@@ -32,10 +34,6 @@ const OrderBox = ({ user }) => {
         const { status, data } = await createOrder(order, user.id);
 
         if (status === 201 && !isEmpty(data)) {
-          console.log(
-            "🚀 ~ file: CheckOutOrderBox.jsx ~ line 29 ~ handleOrder ~ data",
-            data
-          );
           toast.success("order submit successful", {
             position: "top-right",
             onClose: true,
@@ -52,37 +50,25 @@ const OrderBox = ({ user }) => {
       });
       console.log(exp);
     }
-
-    // if (user && cart.length ) {
-    //   history.push("/confirmation/" + status);
-    //   // <Redirect
-    //   //   to={{
-    //   //     pathname: "/confirmation",
-
-    //   //   }}
-    //   // />;
-    // }
   };
   return (
     <div className="order_box">
       <h2>Your Order</h2>
       <ul className="list">
         <li>
-          <a href="/#">
+          <a href="/#" onClick={(e) => e.preventDefault()}>
             Product
             <span>Total</span>
           </a>
         </li>
         {cart.map((el, index) => (
-          <>
-            <li key={index}>
-              <Link to={`/product/${el.id}`}>
-                {el.title}
-                <span className="middle">x {el.quantity}</span>
-                <span className="last">{el.price}</span>
-              </Link>
-            </li>
-          </>
+          <li key={index}>
+            <Link to={`/product/${el.id}`}>
+              {el.title}
+              <span className="middle">x {el.quantity}</span>
+              <span className="last">{el.price}</span>
+            </Link>
+          </li>
         ))}
       </ul>
       <ul className="list list_2">
@@ -150,20 +136,28 @@ const OrderBox = ({ user }) => {
         <input
           type="checkbox"
           id="f-option4"
+          className={!terms && !onceSubmited ? "" : "check-box-outline-color"}
           name="selector"
           onChange={(e) => {
             setterms(e.currentTarget.checked);
           }}
         />
         <label htmlFor="f-option4">I’ve read and accept the </label>
-        <a href="/#">terms & conditions*</a>
+        <a href="/#"> terms & conditions*</a>
+        {!terms && !onceSubmited ? (
+          ""
+        ) : (
+          <p className="text-danger">you must accept terms and conditions</p>
+        )}
       </div>
       {!isEmpty(user) ? (
         <button className="btn_3 mx-auto" onClick={handleOrder}>
           Proceed to Paypal
         </button>
       ) : (
-        "first register or login"
+        <p className="text-danger text-center">
+          first,you should login or register
+        </p>
       )}
     </div>
   );
