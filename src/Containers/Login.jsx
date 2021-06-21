@@ -7,14 +7,16 @@ import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 import PreLoadings from "../Components/Utils/PreLoadings";
 import { AddUser } from "../Redux/Actions/User";
 import { isEmpty } from "lodash";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
-
   const [email, setemail] = useState();
   const [password, setpassword] = useState();
   const [rememberme, setrememberme] = useState();
   const [loading, setloading] = useState(false);
+
   const handleLogin = async (event) => {
     event.preventDefault();
     const user = {
@@ -90,60 +92,118 @@ const Login = () => {
                     {loading ? (
                       <PreLoadings />
                     ) : (
-                      <form
-                        onSubmit={handleLogin}
-                        className="row contact_form"
-                        action="/#"
-                        method="post"
-                        noValidate="novalidate"
-                      >
-                        <div className="col-md-12 form-group p_star">
-                          <input
-                            type="email"
-                            className="form-control"
-                            id="name"
-                            name="name"
-                            value={email}
-                            placeholder="hamed0zabihi@gmail.com"
-                            onChange={(e) => setemail(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-12 form-group p_star">
-                          <input
-                            type="password"
-                            className="form-control"
-                            id="password"
-                            name="password"
-                            value={password}
-                            placeholder="123456"
-                            onChange={(e) => setpassword(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-12 form-group">
-                          <div className="creat_account d-flex align-items-center">
-                            <input
-                              type="checkbox"
-                              id="f-option"
-                              name="selector"
-                              value={rememberme}
-                              onChange={(e) =>
-                                setrememberme(e.currentTarget.checked)
+                      <>
+                        <Formik
+                          initialValues={{
+                            email: "hamed0zabihi@gmail.com",
+                            password: "123456",
+                            acceptTerms: false,
+                          }}
+                          validationSchema={Yup.object({
+                            password: Yup.string()
+                              .required("No password provided.")
+                              .min(
+                                6,
+                                "Password is too short - should be 6 chars minimum."
+                              ),
+                            email: Yup.string()
+                              .email("Invalid email address")
+                              .required("Required"),
+                            // acceptTerms: Yup.bool().oneOf(
+                            //   [true],
+                            //   "Accept Terms & Conditions is required"
+                            // ),
+                          })}
+                          onSubmit={async (values, { setSubmitting }) => {
+                            // setTimeout(() => {
+                            //   alert(JSON.stringify(values, null, 2));
+                            //   setSubmitting(false);
+                            // }, 400);
+                            setSubmitting(false);
+                            const user = {
+                              name: "hamed zabihi",
+                              email: values.email,
+                              password: values.password,
+                            };
+
+                            try {
+                              setloading(true);
+                              const { status, data } = await LoginUser(user);
+                              //mockapi.io dont feature for get one user base username and password
+                              if (status === 200 && data && data.length) {
+                                toast.success(" login success ", {
+                                  position: "top-right",
+                                  onClose: true,
+                                });
+
+                                dispatch(AddUser(data[0]));
+                                setloading(false);
                               }
-                            />
-                            <label htmlFor="f-option">Remember me</label>
-                          </div>
-                          <button
-                            type="submit"
-                            value="submit"
-                            className="btn_3"
-                          >
-                            log in
-                          </button>
-                          <a className="lost_pass" href="/#">
-                            forget password?
-                          </a>
-                        </div>
-                      </form>
+                              if (status === 200 && data.length === 0) {
+                                toast.error(" user not found ", {
+                                  position: "top-right",
+                                  onClose: true,
+                                });
+                                setloading(false);
+                              }
+                            } catch (exp) {
+                              toast.error("failed", {
+                                position: "top-right",
+                                onClose: true,
+                              });
+                              setloading(false);
+                              console.log(exp);
+                            }
+
+                            // end onSubmit formik
+                          }}
+                        >
+                          <Form className="row contact_form">
+                            <div className="col-md-12 form-group p_star">
+                              <label htmlFor="email">Email Address</label>
+
+                              <Field
+                                className="form-control"
+                                name="email"
+                                type="email"
+                              />
+                              <ErrorMessage
+                                component="span"
+                                className="text-danger"
+                                name="email"
+                              />
+                            </div>
+                            <div className="col-md-12 form-group p_star">
+                              <label htmlFor="password">password</label>
+                              <Field
+                                className="form-control"
+                                name="password"
+                                type="password"
+                              />
+                              <ErrorMessage
+                                component="span"
+                                className="text-danger"
+                                name="password"
+                              />
+                            </div>
+                            <div className="col-md-12 form-group">
+                              <Field
+                                className="form-check-label"
+                                type="checkbox"
+                                name="acceptTerms"
+                              />
+                              <label htmlFor="acceptTerms">Remember me</label>
+
+                              <button className="btn_3" type="submit">
+                                login
+                              </button>
+                              <a className="lost_pass" href="/#">
+                                forget password?
+                              </a>
+                            </div>
+                          </Form>
+                        </Formik>
+                      </>
                     )}
                   </div>
                 </div>
