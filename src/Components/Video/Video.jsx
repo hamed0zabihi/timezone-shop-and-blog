@@ -1,6 +1,6 @@
 const Video = () => {
   return (
-    <div className="video-area">
+    <div className="video-area mb-100">
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-12">
