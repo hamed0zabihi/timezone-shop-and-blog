@@ -12,48 +12,7 @@ import * as Yup from "yup";
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
-  const [email, setemail] = useState();
-  const [password, setpassword] = useState();
-  const [rememberme, setrememberme] = useState();
   const [loading, setloading] = useState(false);
-
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    const user = {
-      name: "hamed zabihi",
-      email: email,
-      password: password,
-    };
-
-    try {
-      setloading(true);
-      const { status, data } = await LoginUser(user);
-      //mockapi.io dont feature for get one user base username and password
-      if (status === 200 && data && data.length) {
-        toast.success(" login success ", {
-          position: "top-right",
-          onClose: true,
-        });
-
-        dispatch(AddUser(data[0]));
-        setloading(false);
-      }
-      if (status === 200 && data.length === 0) {
-        toast.error(" user not found ", {
-          position: "top-right",
-          onClose: true,
-        });
-        setloading(false);
-      }
-    } catch (exp) {
-      toast.error("failed", {
-        position: "top-right",
-        onClose: true,
-      });
-      setloading(false);
-      console.log(exp);
-    }
-  };
   return (
     <main>
       <BigHeroTitle name="Login" />
