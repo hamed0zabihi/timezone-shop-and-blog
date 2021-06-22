@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import Contacts from "./Contacts";
 import Home from "./Home/Home";
 import Login from "./Login";
+import Register from "./Register";
 
 const TimeZone = () => {
   return (
@@ -21,6 +22,7 @@ const TimeZone = () => {
         <Route path="/checkout" component={CheckOut} />
         <Route path="/confirmation/:id" component={CheckOutConfirmation} />
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/product/:id" exact component={SingleProduct} />
         <Route path="/" exact component={Home} />
       </MainLayout>

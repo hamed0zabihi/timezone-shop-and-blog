@@ -1,6 +1,6 @@
 const PreLoadings = () => {
   return (
-    <div className="row" id="preloader-active">
+    <div className="row mx-auto" id="preloader-active">
       <div className="preloader1 d-flex align-items-center justify-content-center">
         <div className="preloader-inner position-relative">
           <div className="preloader-circle"></div>

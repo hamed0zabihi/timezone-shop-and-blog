@@ -71,7 +71,7 @@ const CheckOut = () => {
               </div>
             </>
           ) : (
-            "The cart is empty"
+            <p className="mx-auto text-center bg-success">the cart is empty</p>
           )}
         </div>
       </section>

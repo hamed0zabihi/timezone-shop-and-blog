@@ -19,7 +19,10 @@ const Login = () => {
       {!isEmpty(userIsExist) ? (
         <section className="login_part section_padding ">
           <div className="container">
-            <div className="row align-items-center">your are logined</div>
+            <div className="row align-items-center">
+              {" "}
+              <p className="mx-auto text-center text-danger">you are logined</p>
+            </div>
           </div>
         </section>
       ) : (
@@ -35,7 +38,7 @@ const Login = () => {
                       everyday, and a good example of this is the
                     </p>
 
-                    <Link to="/" className="btn_3">
+                    <Link to="/register" className="btn_3">
                       Create an Account
                     </Link>
                   </div>
