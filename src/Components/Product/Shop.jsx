@@ -31,6 +31,7 @@ const Shop = () => {
     console.log("filedname,", filterProducts);
     setfilterProducts(orderBy(filterProducts, fieldName, "desc"));
     setsortingMode(fieldName);
+    setCurrentPage(1);
   };
   const ProductsPaginated = Paginate(filterProducts, PerPage, CurrentPage);
   return (
