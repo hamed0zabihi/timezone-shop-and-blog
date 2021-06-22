@@ -9827,6 +9827,27 @@ input:focus {
   z-index: 2147483647;
   display: none;
 }
-.check-box-outline-color{
+.check-box-outline-color {
   outline: 1px solid #ff2020;
+}
+.map-container {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+}
+
+.map-container-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+}
+.leaflet-control-container {
+  width: 100vw;
+  height: 60vh;
+}
+
+.height-map {
+  height: 30vh;
 }

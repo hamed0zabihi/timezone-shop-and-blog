@@ -6,6 +6,7 @@ import Shop from "../Components/Product/Shop";
 import SingleProduct from "../Components/Product/SingleProduct";
 import About from "./About";
 import Cart from "./Cart";
+import Contacts from "./Contacts";
 import Home from "./Home/Home";
 import Login from "./Login";
 
@@ -14,6 +15,7 @@ const TimeZone = () => {
     <Switch>
       <MainLayout>
         <Route path="/about" component={About} />
+        <Route path="/contacts" component={Contacts} />
         <Route path="/shop" component={Shop} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={CheckOut} />

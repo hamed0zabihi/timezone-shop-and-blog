@@ -68,10 +68,6 @@ const Login = () => {
                             email: Yup.string()
                               .email("Invalid email address")
                               .required("Required"),
-                            // acceptTerms: Yup.bool().oneOf(
-                            //   [true],
-                            //   "Accept Terms & Conditions is required"
-                            // ),
                           })}
                           onSubmit={async (values, { setSubmitting }) => {
                             // setTimeout(() => {
