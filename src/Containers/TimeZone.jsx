@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import MainLayout from "../Components/Layout/MainLayout";
 import CheckOut from "../Components/Product/CheckOut";
 import CheckOutConfirmation from "../Components/Product/CheckOutConfirmation";
+import SearchProduct from "../Components/Product/SearchProduct";
 import Shop from "../Components/Product/Shop";
 import SingleProduct from "../Components/Product/SingleProduct";
 import About from "./About";
@@ -21,6 +22,7 @@ const TimeZone = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={CheckOut} />
         <Route path="/confirmation/:id" component={CheckOutConfirmation} />
+        <Route path="/search/:query" component={SearchProduct} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/product/:id" exact component={SingleProduct} />
