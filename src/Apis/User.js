@@ -9,5 +9,5 @@ export const RegisterUser = (user) => {
 };
 
 export const FavoriteApi = (favorite, userId) => {
-  return http.put(`${api.mockapi}/user/${userId}`, JSON.stringify(favorite));
+  return http.put(`${api.mockapi}/user/${userId}`, favorite);
 };

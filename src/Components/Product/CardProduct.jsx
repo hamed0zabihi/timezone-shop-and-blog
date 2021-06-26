@@ -8,6 +8,7 @@ const CardProduct = ({
   id = "1",
   price = "45743",
   product,
+  toggle,
 }) => {
   const dispatch = useDispatch();
 
@@ -23,7 +24,7 @@ const CardProduct = ({
             <span>Add to cart</span>
           </div>
 
-          <Favorite product={product} />
+          <Favorite product={product} toggle={toggle} />
         </div>
         <div className="popular-caption">
           <h3>

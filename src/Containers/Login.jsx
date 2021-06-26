@@ -9,6 +9,7 @@ import { AddUser } from "../Redux/Actions/User";
 import { isEmpty } from "lodash";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { SetHobby } from "../Redux/Actions/Products/Hobby";
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
@@ -95,6 +96,7 @@ const Login = () => {
                                 });
 
                                 dispatch(AddUser(data[0]));
+                                dispatch(SetHobby());
                                 setloading(false);
                               }
                               if (status === 200 && data.length === 0) {

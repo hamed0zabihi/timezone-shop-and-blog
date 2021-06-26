@@ -5,10 +5,10 @@ import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import { Paginate } from "../Utils/Paginate";
 import Pagination from "../Utils/Pagination";
 import CardProduct from "./CardProduct";
+import FavoriteModalForLogin from "./FavoriteModalForLogin";
 import { orderBy } from "lodash";
 const Shop = () => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
-
   const [filterProducts, setfilterProducts] = useState([]);
   useEffect(() => {
     setfilterProducts(AllProducts);
@@ -34,6 +34,11 @@ const Shop = () => {
     setCurrentPage(1);
   };
   const ProductsPaginated = Paginate(filterProducts, PerPage, CurrentPage);
+  //modal if user not logged in and clicked for favorite product
+  const [modalForLogin, setmodalForLogin] = useState(false);
+  const toggle = () => {
+    setmodalForLogin(!modalForLogin);
+  };
   return (
     <main>
       {/* <!-- Hero Area Start--> */}
@@ -118,6 +123,7 @@ const Shop = () => {
                   image={el.image}
                   price={el.price}
                   product={el}
+                  toggle={toggle}
                 />
               ))}
             </div>
@@ -137,6 +143,7 @@ const Shop = () => {
       {/* <!--? Shop Method Start--> */}
       <ShopMethodContainer />
       {/* <!-- Shop Method End--> */}
+      <FavoriteModalForLogin modal={modalForLogin} toggle={toggle} />
     </main>
   );
 };
