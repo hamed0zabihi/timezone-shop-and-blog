@@ -13,12 +13,12 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
             CurrentPage > 1 ? "page-item " : "page-item disabled no-drop"
           }
         >
-          <a
+          <div
             className="page-link"
             onClick={() => handlePagination(CurrentPage - 1)}
           >
             <i className="ti-angle-left"></i>
-          </a>
+          </div>
         </li>
         {PageCounter.map((el) => (
           <li
@@ -26,14 +26,14 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
             onClick={() => handlePagination(el)}
             className={el === CurrentPage ? "page-item active" : "page-item"}
           >
-            <a
+            <div
               className="page-link"
               onClick={() => {
                 handlePagination(el);
               }}
             >
               {el}
-            </a>
+            </div>
           </li>
         ))}
         <li
@@ -43,12 +43,12 @@ const Pagination = ({ items, PerPage, CurrentPage, handlePagination }) => {
               : "page-item disabled no-drop"
           }
         >
-          <a
+          <div
             className="page-link"
             onClick={() => handlePagination(CurrentPage + 1)}
           >
             <i className="ti-angle-right"></i>
-          </a>
+          </div>
         </li>
       </ul>
     </nav>

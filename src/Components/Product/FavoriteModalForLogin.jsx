@@ -1,4 +1,3 @@
-import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 const FavoriteModalForLogin = ({ modal, toggle }) => {
   return (

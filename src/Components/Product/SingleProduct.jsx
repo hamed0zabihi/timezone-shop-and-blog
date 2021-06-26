@@ -10,7 +10,7 @@ const SingleProduct = ({ match }) => {
   const SelectedProduct = useSelector((state) => state.Product);
   useEffect(() => {
     dispatch(GetSelectedProduct(match.params.id));
-  }, []);
+  }, [dispatch, match.params.id]);
   const { id, title, image, price, inventory, description } = {
     ...SelectedProduct[0],
   };

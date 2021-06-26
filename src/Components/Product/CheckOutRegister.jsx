@@ -19,8 +19,8 @@ const CheckOutRegister = () => {
     return () => {
       setdatauserdispatch();
     };
-  }, [datauserdispatch]);
-  console.log("datauserdispatch", datauserdispatch);
+  }, [dispatch, datauserdispatch]);
+
   return (
     <>
       {loading ? (

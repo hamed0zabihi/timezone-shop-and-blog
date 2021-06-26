@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "lodash";
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import { createOrder } from "../../Apis/Product";
 import { toast } from "react-toastify";
 import { OrderCreate } from "../../Redux/Actions/Products/Order";

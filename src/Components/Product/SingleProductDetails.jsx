@@ -49,8 +49,8 @@ const SingleProductDetails = ({
                   type="text"
                   min="0"
                   max="10"
-                  defaultValue="1"
                   value={numberOfProduct}
+                  readOnly
                 />
                 <span className="product_count_item number-increment">
                   <i

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
-import MainMenu from "./MainMenu";
 import MainMenu1 from "./MainMenu1";
 import MenuRight from "./MenuRight";
 

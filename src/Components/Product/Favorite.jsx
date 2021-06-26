@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "lodash";
-import { toast } from "react-toastify";
 import { AddHobby, RemoveHobby } from "../../Redux/Actions/Products/Hobby";
 
 const Favorite = ({ product, toggle }) => {

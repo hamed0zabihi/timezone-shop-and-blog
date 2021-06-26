@@ -1,5 +1,4 @@
 export const OrderReducer = (state = {}, action) => {
-  console.log("action", action.payload);
   switch (action.type) {
     case "ORDER_LIST_SUCCESS":
       return { ...action.payload };

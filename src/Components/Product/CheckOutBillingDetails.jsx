@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const CheckOutBillingDetails = ({ user }) => {
-  const [idUser, setidUser] = useState("");
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [country, setcountry] = useState("Iran");
@@ -10,7 +9,6 @@ const CheckOutBillingDetails = ({ user }) => {
   const [city, setcity] = useState("");
 
   useEffect(() => {
-    setidUser(user.id);
     setname(user.name);
     setemail(user.email);
     setcountry(user.address[0].country);
@@ -18,7 +16,6 @@ const CheckOutBillingDetails = ({ user }) => {
     setaddresstwo(user.address[0].addresstwo);
     setcity(user.address[0].city);
     return () => {
-      setidUser();
       setname();
       setemail();
       setcountry();
