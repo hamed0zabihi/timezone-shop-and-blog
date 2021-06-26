@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProductToCart } from "../../Redux/Actions/Products/Cart";
-
+import Favorite from "./Favorite";
 const CardProduct = ({
   title = "Thermo Ball Etip Gloves",
   image = "/images/gallery/popular1.png",
@@ -22,9 +22,8 @@ const CardProduct = ({
           >
             <span>Add to cart</span>
           </div>
-          <div className="favorit-items">
-            <span className="flaticon-heart"></span>
-          </div>
+
+          <Favorite product={product} />
         </div>
         <div className="popular-caption">
           <h3>

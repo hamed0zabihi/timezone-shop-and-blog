@@ -7,3 +7,7 @@ export const LoginUser = (user) => {
 export const RegisterUser = (user) => {
   return http.post(`${api.mockapi}/user`, JSON.stringify(user));
 };
+
+export const FavoriteApi = (favorite, userId) => {
+  return http.put(`${api.mockapi}/user/${userId}`, JSON.stringify(favorite));
+};
