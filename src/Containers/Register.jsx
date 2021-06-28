@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { RegisterUser } from "../Apis/User";
+import { RegisterUser } from "../Server/User";
 import { AddUser } from "../Redux/Actions/User";
 import PreLoadings from "../Components/Utils/PreLoadings";
 import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";

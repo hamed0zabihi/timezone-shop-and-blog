@@ -2,7 +2,7 @@ import { ErrorMessage } from "formik";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { LoginUser } from "../../Apis/User";
+import { LoginUser } from "../../Server/User";
 import { AddUser } from "../../Redux/Actions/User";
 import PreLoadings from "../Utils/PreLoadings";
 import { Formik, Field, Form } from "formik";

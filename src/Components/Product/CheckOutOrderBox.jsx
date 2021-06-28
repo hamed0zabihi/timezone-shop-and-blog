@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "lodash";
 import { useHistory } from "react-router";
-import { createOrder } from "../../Apis/Product";
+import { createOrder } from "../../Server/Product";
 import { toast } from "react-toastify";
 import { OrderCreate } from "../../Redux/Actions/Products/Order";
 import { clearCart } from "../../Redux/Actions/Products/Cart";

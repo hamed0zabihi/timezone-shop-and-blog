@@ -1,4 +1,4 @@
-import { getArticlesFromApi } from "../../../../Apis/Article";
+import { getArticlesFromApi } from "../../../../Server/Article";
 
 export const GetArticles = () => {
   return async (dispatch) => {

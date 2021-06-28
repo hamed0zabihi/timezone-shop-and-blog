@@ -1,4 +1,4 @@
-import { FavoriteApi } from "../../../Apis/User";
+import { FavoriteApi } from "../../../Server/User";
 
 export const SetHobby = () => {
   return async (dispatch, getState) => {

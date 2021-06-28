@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoginUser } from "../Apis/User";
+import { LoginUser } from "../Server/User";
 import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 import PreLoadings from "../Components/Utils/PreLoadings";
 import { AddUser } from "../Redux/Actions/User";

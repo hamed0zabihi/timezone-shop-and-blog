@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { RegisterUser } from "../../Apis/User";
+import { RegisterUser } from "../../Server/User";
 import { AddUser } from "../../Redux/Actions/User";
 import PreLoadings from "../Utils/PreLoadings";
 import { isEmpty } from "lodash";
