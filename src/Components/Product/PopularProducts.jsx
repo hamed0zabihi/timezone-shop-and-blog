@@ -2,6 +2,7 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "../../Redux/Actions/Products/Cart";
+
 const PopularProducts = () => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
   const PopularProducts = _(AllProducts)
@@ -9,6 +10,7 @@ const PopularProducts = () => {
     .take(6)
     .value();
   const dispatch = useDispatch();
+
   return (
     //   Popular Items Start
     <div className="popular-items section-padding30">

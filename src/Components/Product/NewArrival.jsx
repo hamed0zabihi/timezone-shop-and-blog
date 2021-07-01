@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+
 const NewArrival = () => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
   const ThreeProducts = _(AllProducts)
     .orderBy("createAt", "desc")
     .take(3)
     .value();
+
   return (
     <>
       <section className="new-product-area section-padding30">

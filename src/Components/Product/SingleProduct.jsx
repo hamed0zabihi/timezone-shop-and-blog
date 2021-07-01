@@ -5,15 +5,19 @@ import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import SingleProductDetails from "./SingleProductDetails";
 import SingleProductSlider from "./SingleProductSlider";
 import SubscribeSection from "./SubscribeSection";
+
 const SingleProduct = ({ match }) => {
   const dispatch = useDispatch();
   const SelectedProduct = useSelector((state) => state.Product);
+
   useEffect(() => {
     dispatch(GetSelectedProduct(match.params.id));
   }, [dispatch, match.params.id]);
+
   const { id, title, image, price, inventory, description } = {
     ...SelectedProduct[0],
   };
+
   return (
     <>
       <BigHeroTitle name={title} />

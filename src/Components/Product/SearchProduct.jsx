@@ -6,9 +6,9 @@ import { Paginate } from "../Utils/Paginate";
 import Pagination from "../Utils/Pagination";
 import CardProduct from "./CardProduct";
 import { orderBy, isEmpty } from "lodash";
+
 const SearchProduct = ({ match }) => {
   const AllProducts = useSelector((state) => state.ProductsLocal);
-
   const [filterProducts, setfilterProducts] = useState([]);
   const [searchQuery, setsearchQuery] = useState("");
   const querySearch = match.params.query;
@@ -27,7 +27,6 @@ const SearchProduct = ({ match }) => {
   const [CurrentPage, setCurrentPage] = useState(1);
   const [PerPage, setPerPage] = useState(6);
   const [sortingMode, setsortingMode] = useState("");
-
   //set currentpage
   const handleCurrentPage = (id) => {
     return setCurrentPage(id);
@@ -45,6 +44,7 @@ const SearchProduct = ({ match }) => {
     setCurrentPage(1);
   };
   const ProductsPaginated = Paginate(filterProducts, PerPage, CurrentPage);
+
   return (
     <main>
       <>

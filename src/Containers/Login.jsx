@@ -10,10 +10,12 @@ import { isEmpty } from "lodash";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { SetHobby } from "../Redux/Actions/Products/Hobby";
+
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
   const [loading, setloading] = useState(false);
+
   return (
     <main>
       <BigHeroTitle name="Login" />
@@ -84,7 +86,6 @@ const Login = () => {
                               email: values.email,
                               password: values.password,
                             };
-
                             try {
                               setloading(true);
                               const { status, data } = await LoginUser(user);
@@ -94,7 +95,6 @@ const Login = () => {
                                   position: "top-right",
                                   onClose: true,
                                 });
-
                                 dispatch(AddUser(data[0]));
                                 dispatch(SetHobby());
                                 setloading(false);
@@ -114,14 +114,12 @@ const Login = () => {
                               setloading(false);
                               console.log(exp);
                             }
-
                             // end onSubmit formik
                           }}
                         >
                           <Form className="row contact_form">
                             <div className="col-md-12 form-group p_star">
                               <label htmlFor="email">Email Address</label>
-
                               <Field
                                 className="form-control"
                                 name="email"
@@ -153,7 +151,6 @@ const Login = () => {
                                 name="acceptTerms"
                               />
                               <label htmlFor="acceptTerms">Remember me</label>
-
                               <button className="btn_3" type="submit">
                                 login
                               </button>

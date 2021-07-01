@@ -1,6 +1,7 @@
 import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 import Video from "../Components/Video/Video";
 import ShopMethodContainer from "../Components/Home/ShopMethodContainer";
+
 const About = () => {
   return (
     <>
@@ -19,7 +20,6 @@ const About = () => {
                   eiusmod tempor maecenas accumsan lacus.
                 </p>
                 <p>
-                  {" "}
                   Risus commodo viverra sebfd dho eiusmod tempor maecenas
                   accumsan lacus. Risus commodo viverra sebfd dho eiusmod tempor
                   maecenas accumsan.
@@ -36,7 +36,6 @@ const About = () => {
                   eiusmod tempor maecenas accumsan lacus.
                 </p>
                 <p>
-                  {" "}
                   Risus commodo viverra sebfd dho eiusmod tempor maecenas
                   accumsan lacus. Risus commodo viverra sebfd dho eiusmod tempor
                   maecenas accumsan.

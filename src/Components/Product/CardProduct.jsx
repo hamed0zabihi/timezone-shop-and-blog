@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 import Favorite from "./Favorite";
+
 const CardProduct = ({
   title = "Thermo Ball Etip Gloves",
   image = "/images/gallery/popular1.png",

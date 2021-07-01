@@ -5,6 +5,7 @@ import OrderBox from "./CheckOutOrderBox";
 import CheckOutRegister from "./CheckOutRegister";
 import CheckOutBillingDetails from "./CheckOutBillingDetails";
 import { isEmpty } from "lodash";
+
 const CheckOut = () => {
   const isUserExist = useSelector((state) => state.user);
   const isCartExist = useSelector((state) => state.cart);

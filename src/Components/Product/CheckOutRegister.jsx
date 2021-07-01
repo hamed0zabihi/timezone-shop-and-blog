@@ -7,12 +7,12 @@ import PreLoadings from "../Utils/PreLoadings";
 import { isEmpty } from "lodash";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+
 const CheckOutRegister = () => {
   const dispatch = useDispatch();
   const [loading, setloading] = useState(false);
   const [isSubscribed, setisSubscribed] = useState(true);
   const [datauserdispatch, setdatauserdispatch] = useState();
-
   // for solve error: To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
   useEffect(() => {
     dispatch(AddUser(datauserdispatch));

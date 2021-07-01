@@ -29,7 +29,6 @@ export const Cart = (state = [], action) => {
           el.id === action.payload ? { ...el, quantity: el.quantity - 1 } : el
         );
       }
-
     case "CLEAR_CART":
       return [...action.payload];
     default:

@@ -8,6 +8,7 @@ import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 import { isEmpty } from "lodash";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+
 const Register = () => {
   const isUserExist = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -208,9 +209,7 @@ const Register = () => {
                             className="country_select"
                           >
                             <option value="Iran">Iran</option>
-
                             <option value="United State">United State</option>
-
                             <option value="Sweden">Sweden</option>
                           </Field>
                           <ErrorMessage
@@ -225,7 +224,6 @@ const Register = () => {
                             type="text"
                             name="addressone"
                           />
-
                           {values.addressone ? (
                             ""
                           ) : (
@@ -267,7 +265,6 @@ const Register = () => {
                             type="text"
                             name="city"
                           />
-
                           {values.city ? (
                             ""
                           ) : (
@@ -282,7 +279,6 @@ const Register = () => {
                             className="text-danger"
                           />
                         </div>
-
                         <button type="submit" value="submit" className="btn_3">
                           register
                         </button>

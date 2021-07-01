@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+
 const SingleProductSlider = () => {
   const settings = {
     dots: true,

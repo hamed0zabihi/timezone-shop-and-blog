@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./Containers/App";
 import { Provider } from "react-redux";
-import "react-toastify/dist/ReactToastify.css";
 import { Store } from "./Redux/Store/Store";
+import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
+
 ReactDOM.render(
   <Provider store={Store}>
     <App />

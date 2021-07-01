@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.interceptors.response.use(
   (response) => {
@@ -7,7 +8,6 @@ axios.interceptors.response.use(
       console.log("🚀 ~ file: http.js ~  response", response);
       return response;
     }
-
     return Promise.reject(response);
   },
   (error) => {
@@ -26,12 +26,6 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-// export default {
-//   get: axios.get,
-//   post: axios.post,
-//   put: axios.put,
-//   delete: axios.delete,
-// };
 
 const http = {
   get: axios.get,

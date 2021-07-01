@@ -6,6 +6,7 @@ import LocalFakeData from "./LocalFakeData";
 import { OrderReducer } from "./OrderReducer";
 import { UserReducer } from "./User";
 import { HobbyReducer } from "./Hobby";
+
 export const reducers = combineReducers({
   Article: ArticleReducer,
   ProductsLocal: LocalFakeData,

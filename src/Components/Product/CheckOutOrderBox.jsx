@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { OrderCreate } from "../../Redux/Actions/Products/Order";
 import { clearCart } from "../../Redux/Actions/Products/Cart";
 import { Link } from "react-router-dom";
+
 const OrderBox = ({ user }) => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -51,6 +52,7 @@ const OrderBox = ({ user }) => {
       console.log(exp);
     }
   };
+
   return (
     <div className="order_box">
       <h2>Your Order</h2>

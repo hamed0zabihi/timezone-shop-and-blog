@@ -6,6 +6,7 @@ export const SetHobby = () => {
     await dispatch({ type: "SET_HOBBY_PRODUCTS", payload: data });
   };
 };
+
 export const AddHobby = (id, userid) => {
   return async (dispatch, getState) => {
     const addProductIdToFavortes = [...getState().hobby, id];
@@ -16,6 +17,7 @@ export const AddHobby = (id, userid) => {
     }
   };
 };
+
 export const RemoveHobby = (id, userid) => {
   return async (dispatch, getState) => {
     const allHobby = getState().hobby;

@@ -2,6 +2,7 @@ import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
 import CartProducts from "../Components/Product/CartProducts";
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   return (

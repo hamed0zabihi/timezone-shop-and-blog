@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import PreLoadings from "../Utils/PreLoadings";
+
 const Maps = React.lazy(() => import("./Maps"));
 const MapLeaflet = () => {
   return (

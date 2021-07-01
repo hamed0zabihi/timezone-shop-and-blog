@@ -16,12 +16,10 @@ const Video = () => {
             </div>
           </div>
         </div>
-
         <div className="thumb-content-box">
           <div className="thumb-content">
             <h3>Next Video</h3>
             <a href="/#">
-              {" "}
               <i className="flaticon-arrow"></i>
             </a>
           </div>

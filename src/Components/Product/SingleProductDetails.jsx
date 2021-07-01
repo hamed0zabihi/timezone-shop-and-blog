@@ -27,7 +27,7 @@ const SingleProductDetails = ({
   };
   const cart = useSelector((state) => state.cart);
   const isExistProductToCart = cart.find((el) => el.id === id);
-  if (isExistProductToCart) console.log("isExistProductToCart", true);
+
   return (
     <>
       <div className="col-lg-8">
