@@ -1,8 +1,10 @@
+import * as types from "../Actions/ActionTypes";
+
 export const Cart = (state = [], action) => {
   //   let doesItemExist= false;
   let doesItemExist = false;
   switch (action.type) {
-    case "ADD_TO_CART":
+    case types.ADD_TO_CART:
       doesItemExist = state.find((el) => el.id === action.payload.id);
       if (!doesItemExist) {
         return [...state, action.payload];
@@ -18,7 +20,7 @@ export const Cart = (state = [], action) => {
           return el;
         });
       }
-    case "REMOVE_FROM_CART":
+    case types.REMOVE_FROM_CART:
       let findProduct = [];
       findProduct = state.filter((el) => el.id === action.payload);
       const { quantity } = findProduct[0];
@@ -29,7 +31,7 @@ export const Cart = (state = [], action) => {
           el.id === action.payload ? { ...el, quantity: el.quantity - 1 } : el
         );
       }
-    case "CLEAR_CART":
+    case types.CLEAR_CART:
       return [...action.payload];
     default:
       return state;

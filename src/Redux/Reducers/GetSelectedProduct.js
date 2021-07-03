@@ -1,7 +1,10 @@
-const init = [];
-export const GetSelectedProductRedecer = (state = init, action) => {
+import * as types from "../Actions/ActionTypes";
+
+const initialState = [];
+
+export const GetSelectedProductRedecer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_SELECTED_PRODUCT":
+    case types.GET_SELECTED_PRODUCT:
       return [...action.payload];
 
     default:

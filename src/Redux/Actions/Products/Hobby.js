@@ -1,9 +1,10 @@
+import * as types from "../ActionTypes";
 import { FavoriteApi } from "../../../Server/User";
 
 export const SetHobby = () => {
   return async (dispatch, getState) => {
     const data = [...getState().user.favorites];
-    await dispatch({ type: "SET_HOBBY_PRODUCTS", payload: data });
+    await dispatch({ type: types.SET_HOBBY_PRODUCTS, payload: data });
   };
 };
 
@@ -13,7 +14,10 @@ export const AddHobby = (id, userid) => {
     const favorite = { favorites: [...addProductIdToFavortes] };
     const { status } = await FavoriteApi(favorite, userid);
     if (status === 200) {
-      await dispatch({ type: "ADD_HOBBY", payload: addProductIdToFavortes });
+      await dispatch({
+        type: types.ADD_HOBBY,
+        payload: addProductIdToFavortes,
+      });
     }
   };
 };
@@ -26,7 +30,7 @@ export const RemoveHobby = (id, userid) => {
     const { status } = await FavoriteApi(favorite, userid);
     if (status === 200) {
       await dispatch({
-        type: "REMOVE_HOBBY",
+        type: types.REMOVE_HOBBY,
         payload: removeProductIdFromFavorites,
       });
     }

@@ -1,10 +1,12 @@
+import * as types from "../Actions/ActionTypes";
+
 export const UserReducer = (state = {}, action) => {
   switch (action.type) {
-    case "SET_USER":
+    case types.SET_USER:
       return { ...action.payload };
-    case "UPDATE_USER":
+    case types.UPDATE_USER:
       return { ...action.payload };
-    case "CLEAR_USER":
+    case types.CLEAR_USER:
       return { ...action.payload };
     default:
       return state;
