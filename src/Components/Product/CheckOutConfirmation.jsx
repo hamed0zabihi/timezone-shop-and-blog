@@ -80,7 +80,7 @@ const CheckOutConfirmation = () => {
                     {order.orderDetails.map((el) => (
                       <tr key={el.id}>
                         <th colSpan="2">
-                          <Link to={`product/${el.id}`}>
+                          <Link to={`/product/${el.id}`}>
                             <span>{el.title}</span>
                           </Link>
                         </th>
