@@ -1,6 +1,8 @@
 import * as types from "../Actions/ActionTypes";
 
-export const Cart = (state = [], action) => {
+const initialState = [];
+
+export const Cart = (state = initialState, action) => {
   //   let doesItemExist= false;
   let doesItemExist = false;
   switch (action.type) {

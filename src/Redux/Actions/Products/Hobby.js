@@ -2,6 +2,8 @@ import * as types from "../ActionTypes";
 import { FavoriteApi } from "../../../Server/User";
 import { SuccessMessage } from "../../../Components/Utils/ToastMessage";
 
+const initialState = [];
+
 export const SetHobby = () => {
   return async (dispatch, getState) => {
     const data = [...getState().user.favorites];
@@ -9,7 +11,7 @@ export const SetHobby = () => {
   };
 };
 
-export const AddHobby = (id, userid) => {
+export const AddHobby = (id = initialState, userid = initialState) => {
   return async (dispatch, getState) => {
     const addProductIdToFavortes = [...getState().hobby, id];
     const favorite = { favorites: [...addProductIdToFavortes] };
@@ -24,7 +26,7 @@ export const AddHobby = (id, userid) => {
   };
 };
 
-export const RemoveHobby = (id, userid) => {
+export const RemoveHobby = (id = initialState, userid = initialState) => {
   return async (dispatch, getState) => {
     const allHobby = getState().hobby;
     const removeProductIdFromFavorites = allHobby.filter((el) => el !== id);

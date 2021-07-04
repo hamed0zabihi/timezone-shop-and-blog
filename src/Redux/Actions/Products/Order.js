@@ -1,6 +1,8 @@
 import * as types from "../ActionTypes";
 
-export const OrderCreate = (order1) => {
+const initialState = {};
+
+export const OrderCreate = (order1 = initialState) => {
   return async (dispatch) => {
     await dispatch({ type: types.ORDER_LIST_SUCCESS, payload: { ...order1 } });
   };

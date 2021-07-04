@@ -1,6 +1,8 @@
 import * as types from "../ActionTypes";
 
-export const GetSelectedProduct = (id) => {
+const initialState = [];
+
+export const GetSelectedProduct = (id = initialState) => {
   return async (dispatch, getState) => {
     const AllProducts = [...getState().productsLocal];
     const data = AllProducts.filter((el) => el.id === parseInt(id));

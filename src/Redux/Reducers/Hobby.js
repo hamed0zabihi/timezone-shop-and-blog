@@ -1,6 +1,8 @@
 import * as types from "../Actions/ActionTypes";
 
-export const HobbyReducer = (state = [], action) => {
+const initialState = [];
+
+export const HobbyReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_HOBBY_PRODUCTS:
       return [...action.payload];
