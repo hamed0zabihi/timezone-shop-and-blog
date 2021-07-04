@@ -98,9 +98,9 @@ const CartProducts = () => {
               <td></td>
               <td>
                 <div className="cupon_text float-right">
-                  <button className="btn_1">
-                    <Link to="/shop">Countiue shopping</Link>
-                  </button>
+                  <Link to="/shop" className=" btn_1 checkout_btn_1">
+                    Countiue shopping
+                  </Link>
                 </div>
               </td>
             </tr>
