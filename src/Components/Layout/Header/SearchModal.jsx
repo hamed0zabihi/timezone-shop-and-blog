@@ -1,7 +1,16 @@
 import { withRouter } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useEffect } from "react";
+
 const SearchModal = ({ modal, toggle, history }) => {
+  useEffect(() => {
+    modal
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+    return () => (document.body.style.overflow = "unset");
+  }, [modal]);
+
   return (
     <>
       <div className={modal ? "search-model-box d-block" : "search-model-box"}>
