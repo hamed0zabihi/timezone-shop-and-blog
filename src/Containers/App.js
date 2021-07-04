@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "../Components/Utils/ScrollToTop";
-import TimeZone from "./TimeZone";
+import TimeZone from "./Routes/TimeZone";
 
 const App = () => {
   return (

@@ -1,16 +1,16 @@
 import { Route, Switch } from "react-router-dom";
-import MainLayout from "../Components/Layout/MainLayout";
-import CheckOut from "../Components/Product/CheckOut";
-import CheckOutConfirmation from "../Components/Product/CheckOutConfirmation";
-import SearchProduct from "../Components/Product/SearchProduct";
-import Shop from "../Components/Product/Shop";
-import SingleProduct from "../Components/Product/SingleProduct";
-import About from "./About/About";
-import Cart from "./Cart/Cart";
-import Contacts from "./Contact/Contacts";
-import Home from "./Home/Home";
-import Login from "./Login/Login";
-import Register from "./Register/Register";
+import MainLayout from "../../Components/Layout/MainLayout";
+import CheckOut from "../../Components/Product/CheckOut";
+import CheckOutConfirmation from "../../Components/Product/CheckOutConfirmation";
+import SearchProduct from "../../Components/Product/SearchProduct";
+import Shop from "../../Components/Product/Shop";
+import SingleProduct from "../../Components/Product/SingleProduct";
+import About from "../About/About";
+import Cart from "../Cart/Cart";
+import Contacts from "../Contact/Contacts";
+import Home from "../Home/Home";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 const TimeZone = () => {
   return (
