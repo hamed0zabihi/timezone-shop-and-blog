@@ -8,7 +8,7 @@ import SubscribeSection from "./SubscribeSection";
 
 const SingleProduct = ({ match }) => {
   const dispatch = useDispatch();
-  const SelectedProduct = useSelector((state) => state.Product);
+  const SelectedProduct = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(GetSelectedProduct(match.params.id));

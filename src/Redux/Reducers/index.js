@@ -8,9 +8,9 @@ import { UserReducer } from "./User";
 import { HobbyReducer } from "./Hobby";
 
 export const reducers = combineReducers({
-  Article: ArticleReducer,
-  ProductsLocal: LocalFakeData,
-  Product: GetSelectedProductRedecer,
+  article: ArticleReducer,
+  productsLocal: LocalFakeData,
+  product: GetSelectedProductRedecer,
   cart: Cart,
   user: UserReducer,
   order: OrderReducer,

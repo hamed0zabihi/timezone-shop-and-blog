@@ -8,7 +8,7 @@ import CardProduct from "./CardProduct";
 import { orderBy, isEmpty } from "lodash";
 
 const SearchProduct = ({ match }) => {
-  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const AllProducts = useSelector((state) => state.productsLocal);
   const [filterProducts, setfilterProducts] = useState([]);
   const [searchQuery, setsearchQuery] = useState("");
   const querySearch = match.params.query;

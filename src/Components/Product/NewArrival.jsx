@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import _ from "lodash";
 
 const NewArrival = () => {
-  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const AllProducts = useSelector((state) => state.productsLocal);
   const ThreeProducts = _(AllProducts)
     .orderBy("createAt", "desc")
     .take(3)

@@ -9,7 +9,7 @@ import FavoriteModalForLogin from "./FavoriteModalForLogin";
 import { orderBy } from "lodash";
 
 const Shop = () => {
-  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const AllProducts = useSelector((state) => state.productsLocal);
   const [filterProducts, setfilterProducts] = useState([]);
 
   useEffect(() => {

@@ -7,7 +7,7 @@ import FavoriteModalForLogin from "./FavoriteModalForLogin";
 import Favorite from "./Favorite";
 
 const PopularProducts = () => {
-  const AllProducts = useSelector((state) => state.ProductsLocal);
+  const AllProducts = useSelector((state) => state.productsLocal);
   const PopularProducts = _(AllProducts)
     .orderBy("sellNumber", "desc")
     .take(6)
