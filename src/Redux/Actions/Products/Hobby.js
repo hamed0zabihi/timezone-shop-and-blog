@@ -1,5 +1,6 @@
 import * as types from "../ActionTypes";
 import { FavoriteApi } from "../../../Server/User";
+import { SuccessMessage } from "../../../Components/Utils/ToastMessage";
 
 export const SetHobby = () => {
   return async (dispatch, getState) => {
@@ -14,6 +15,7 @@ export const AddHobby = (id, userid) => {
     const favorite = { favorites: [...addProductIdToFavortes] };
     const { status } = await FavoriteApi(favorite, userid);
     if (status === 200) {
+      SuccessMessage("add success", "bottom-center", 2000);
       await dispatch({
         type: types.ADD_HOBBY,
         payload: addProductIdToFavortes,
@@ -29,6 +31,7 @@ export const RemoveHobby = (id, userid) => {
     const favorite = { favorites: [...removeProductIdFromFavorites] };
     const { status } = await FavoriteApi(favorite, userid);
     if (status === 200) {
+      SuccessMessage("Remove", "bottom-center", 2000);
       await dispatch({
         type: types.REMOVE_HOBBY,
         payload: removeProductIdFromFavorites,
