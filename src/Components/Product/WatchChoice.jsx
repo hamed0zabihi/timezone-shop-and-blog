@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const WatchChoice = () => {
   return (
     <div className="watch-area section-padding30">
@@ -11,9 +13,9 @@ const WatchChoice = () => {
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit in voluptate velit esse.
               </p>
-              <a href="shop.html" className="btn">
+              <Link to="/shop" className="btn">
                 Show Watches
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-10">
@@ -36,9 +38,10 @@ const WatchChoice = () => {
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit in voluptate velit esse.
               </p>
-              <a href="shop.html" className="btn">
+
+              <Link to="/shop" className="btn">
                 Show Watches
-              </a>
+              </Link>
             </div>
           </div>
         </div>
