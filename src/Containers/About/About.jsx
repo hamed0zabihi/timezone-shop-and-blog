@@ -1,7 +1,6 @@
-import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
-import Video from "../Components/Video/Video";
-import ShopMethodContainer from "../Components/Home/ShopMethodContainer";
-
+import BigHeroTitle from "../../Components/Layout/Slider/BigheroTitle";
+import Video from "../../Components/Video/Video";
+import ShopMethodContainer from "../../Components/Home/ShopMethodContainer";
 const About = () => {
   return (
     <>

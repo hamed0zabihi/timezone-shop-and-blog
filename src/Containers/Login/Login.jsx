@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LoginUser } from "../Server/User";
-import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
-import PreLoadings from "../Components/Utils/PreLoadings";
-import { AddUser } from "../Redux/Actions/User";
+import { LoginUser } from "../../Server/User";
+import BigHeroTitle from "../../Components/Layout/Slider/BigheroTitle";
+import PreLoadings from "../../Components/Utils/PreLoadings";
+import { AddUser } from "../../Redux/Actions/User";
 import { isEmpty } from "lodash";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { SetHobby } from "../Redux/Actions/Products/Hobby";
+import { SetHobby } from "../../Redux/Actions/Products/Hobby";
 
 const Login = () => {
   const dispatch = useDispatch();

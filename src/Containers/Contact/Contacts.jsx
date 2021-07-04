@@ -1,9 +1,9 @@
-import BigHeroTitle from "../Components/Layout/Slider/BigheroTitle";
-import MapLeaflet from "../Components/Utils/MapLeaflet";
+import BigHeroTitle from "../../Components/Layout/Slider/BigheroTitle";
+import MapLeaflet from "../../Components/Utils/MapLeaflet";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import PreLoadings from "../Components/Utils/PreLoadings";
+import PreLoadings from "../../Components/Utils/PreLoadings";
 
 const Contacts = () => {
   const [loading, setloading] = useState(false);
