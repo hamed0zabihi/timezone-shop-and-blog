@@ -20,7 +20,7 @@ const HomeSlider = () => {
                       animationInDuration={1000}
                       animationDelay={0.4}
                     >
-                      <h1>Select Your New Perfect Style</h1>
+                      <h1>Select Your New Perfect Styles</h1>
                     </Animated>
                     <Animated
                       animationIn="fadeInLeft"
