@@ -7,6 +7,7 @@ import { AddUser } from "../../Redux/Actions/User";
 import PreLoadings from "../Utils/PreLoadings";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
+import { SetHobby } from "../../Redux/Actions/Products/Hobby";
 
 const CheckOutLogin = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const CheckOutLogin = () => {
                 if (status === 200 && data.length) {
                   // fake api don't feature for check email- response return an array of objects emails
                   dispatch(AddUser(data[0]));
+                  dispatch(SetHobby());
                   setloading(false);
                   toast.success(" login success ", {
                     position: "top-right",
