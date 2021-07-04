@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MainMenu1 = () => {
-  const [toggle, settoggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div className="main-menu">
@@ -15,7 +15,7 @@ const MainMenu1 = () => {
           aria-controls="navbarSupportedContentXL"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          onClick={() => settoggle(!toggle)}
+          onClick={() => setToggle(!toggle)}
         >
           <span className="navbar-toggler-icon">
             <i

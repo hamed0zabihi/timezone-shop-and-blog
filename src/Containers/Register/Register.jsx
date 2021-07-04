@@ -12,8 +12,8 @@ import * as Yup from "yup";
 const Register = () => {
   const isUserExist = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [loading, setloading] = useState(false);
-  const [isSubscribed, setisSubscribed] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(true);
 
   return (
     <>
@@ -86,7 +86,7 @@ const Register = () => {
                         password: values.password,
                         address: [finaladdress],
                       };
-                      setloading(true);
+                      setLoading(true);
                       try {
                         const { status, data } = await RegisterUser(user);
                         if (status === 201 && !isEmpty(data)) {
@@ -99,19 +99,19 @@ const Register = () => {
                             // setdatauserdispatch(data);
                             dispatch(AddUser(data));
                           }
-                          setloading(false);
-                          setisSubscribed(false);
+                          setLoading(false);
+                          setIsSubscribed(false);
                         } else if (status !== 201) {
                           toast.warining("error", {
                             position: "top-right",
                             onClose: true,
                           });
 
-                          setloading(false);
+                          setLoading(false);
                         }
                       } catch (exp) {
                         console.log(exp);
-                        setloading(false);
+                        setLoading(false);
                         toast.error("error", {
                           position: "top-right",
                           onClose: true,

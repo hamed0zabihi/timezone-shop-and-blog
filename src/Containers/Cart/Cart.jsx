@@ -5,6 +5,7 @@ import CartProducts from "../../Components/Product/CartProducts";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+
   return (
     <main>
       <BigHeroTitle name="Cart List" />

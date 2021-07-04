@@ -4,14 +4,14 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 const MainLayout = ({ children }) => {
-  const [backToUp, setbackToUp] = useState(false);
+  const [backToUp, setBackToUp] = useState(false);
 
   const BackToUpScroll = () => {
     const offset = window.scrollY;
     if (offset > 245) {
-      setbackToUp(true);
+      setBackToUp(true);
     } else {
-      setbackToUp(false);
+      setBackToUp(false);
     }
   };
   const scrollToTop = (e) => {

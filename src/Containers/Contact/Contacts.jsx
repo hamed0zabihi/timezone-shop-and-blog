@@ -6,7 +6,7 @@ import { useState } from "react";
 import PreLoadings from "../../Components/Utils/PreLoadings";
 
 const Contacts = () => {
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -47,10 +47,10 @@ const Contacts = () => {
                       .min(2, "minimum 2 length."),
                   })}
                   onSubmit={(values) => {
-                    setloading(true);
+                    setLoading(true);
                     setTimeout(() => {
                       alert(JSON.stringify(values, null, 2));
-                      setloading(false);
+                      setLoading(false);
                     }, 5000);
                   }}
                 >

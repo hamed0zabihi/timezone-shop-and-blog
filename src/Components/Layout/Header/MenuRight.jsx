@@ -2,14 +2,14 @@ import { useSelector } from "react-redux";
 import { isEmpty } from "lodash";
 import { Link } from "react-router-dom";
 import SearchModal from "./SearchModal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const MenuRight = () => {
   const { cart, user } = useSelector((state) => state);
-  const [modalSearch, setmodalSearch] = useState(false);
+  const [modalSearch, setModalSearch] = useState(false);
 
   const toggleSearch = () => {
-    setmodalSearch(!modalSearch);
+    setModalSearch(!modalSearch);
   };
 
   return (

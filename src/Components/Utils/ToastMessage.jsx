@@ -1,4 +1,4 @@
-import { toast, Slide, Zoom, Flip, Bounce } from "react-toastify";
+import { toast, Zoom } from "react-toastify";
 
 export const SuccessMessage = (
   message = "succes",

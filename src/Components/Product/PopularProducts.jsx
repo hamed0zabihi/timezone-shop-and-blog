@@ -15,9 +15,9 @@ const PopularProducts = () => {
   const dispatch = useDispatch();
 
   //modal if user not logged in and clicked for favorite product
-  const [modalForLogin, setmodalForLogin] = useState(false);
+  const [modalForLogin, setModalForLogin] = useState(false);
   const toggle = () => {
-    setmodalForLogin(!modalForLogin);
+    setModalForLogin(!modalForLogin);
   };
 
   return (

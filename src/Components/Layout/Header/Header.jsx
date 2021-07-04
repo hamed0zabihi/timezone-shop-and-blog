@@ -4,14 +4,14 @@ import MainMenu1 from "./MainMenu1";
 import MenuRight from "./MenuRight";
 
 const Header = () => {
-  const [sticky, setsticky] = useState(false);
+  const [sticky, setSticky] = useState(false);
 
   const handleSticky = () => {
     const offset = window.scrollY;
     if (offset < 245) {
-      setsticky(true);
+      setSticky(true);
     } else {
-      setsticky(false);
+      setSticky(false);
     }
   };
   useEffect(() => {

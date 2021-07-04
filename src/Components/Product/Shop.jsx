@@ -10,15 +10,15 @@ import { orderBy } from "lodash";
 
 const Shop = () => {
   const AllProducts = useSelector((state) => state.productsLocal);
-  const [filterProducts, setfilterProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
 
   useEffect(() => {
-    setfilterProducts(AllProducts);
+    setFilterProducts(AllProducts);
   }, [AllProducts]);
 
   const [CurrentPage, setCurrentPage] = useState(1);
   const [PerPage, setPerPage] = useState(6);
-  const [sortingMode, setsortingMode] = useState("");
+  const [sortingMode, setSortingMode] = useState("");
   //set currentpage
   const handleCurrentPage = (id) => {
     return setCurrentPage(id);
@@ -31,8 +31,8 @@ const Shop = () => {
   //filter base popular newest high-price
   const handleSorting = (fieldName) => {
     console.log("filedname,", filterProducts);
-    setfilterProducts(orderBy(filterProducts, fieldName, "desc"));
-    setsortingMode(fieldName);
+    setFilterProducts(orderBy(filterProducts, fieldName, "desc"));
+    setSortingMode(fieldName);
     setCurrentPage(1);
   };
   const ProductsPaginated = Paginate(filterProducts, PerPage, CurrentPage);

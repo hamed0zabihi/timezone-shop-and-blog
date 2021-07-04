@@ -14,7 +14,7 @@ import { SetHobby } from "../../Redux/Actions/Products/Hobby";
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <main>
@@ -87,7 +87,7 @@ const Login = () => {
                               password: values.password,
                             };
                             try {
-                              setloading(true);
+                              setLoading(true);
                               const { status, data } = await LoginUser(user);
                               //mockapi.io dont feature for get one user base username and password
                               if (status === 200 && data && data.length) {
@@ -97,21 +97,21 @@ const Login = () => {
                                 });
                                 dispatch(AddUser(data[0]));
                                 dispatch(SetHobby());
-                                setloading(false);
+                                setLoading(false);
                               }
                               if (status === 200 && data.length === 0) {
                                 toast.error(" user not found ", {
                                   position: "top-right",
                                   onClose: true,
                                 });
-                                setloading(false);
+                                setLoading(false);
                               }
                             } catch (exp) {
                               toast.error("failed", {
                                 position: "top-right",
                                 onClose: true,
                               });
-                              setloading(false);
+                              setLoading(false);
                               console.log(exp);
                             }
                             // end onSubmit formik

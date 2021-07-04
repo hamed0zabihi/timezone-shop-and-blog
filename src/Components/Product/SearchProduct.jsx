@@ -10,14 +10,14 @@ import { orderBy, isEmpty } from "lodash";
 
 const SearchProduct = () => {
   const AllProducts = useSelector((state) => state.productsLocal);
-  const [filterProducts, setfilterProducts] = useState([]);
-  const [searchQuery, setsearchQuery] = useState("");
+  const [filterProducts, setFilterProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const { query } = useParams();
   const querySearch = query;
 
   useEffect(() => {
-    setsearchQuery(querySearch);
-    setfilterProducts(
+    setSearchQuery(querySearch);
+    setFilterProducts(
       AllProducts.filter((el) => el.title.includes(querySearch))
     );
   }, [AllProducts, querySearch]);
@@ -41,7 +41,7 @@ const SearchProduct = () => {
   //filter base popular newest high-price
   const handleSorting = (fieldName) => {
     console.log("filedname,", filterProducts);
-    setfilterProducts(orderBy(filterProducts, fieldName, "desc"));
+    setFilterProducts(orderBy(filterProducts, fieldName, "desc"));
     setsortingMode(fieldName);
     setCurrentPage(1);
   };

@@ -12,12 +12,12 @@ const SingleProductDetails = ({
   image,
   product,
 }) => {
-  const [numberOfProduct, setnumberOfProduct] = useState(1);
+  const [numberOfProduct, setNumberOfProduct] = useState(1);
   const handleIncDecProduct = (type) => {
     if (type === "inc" && numberOfProduct < inventory) {
-      return setnumberOfProduct(numberOfProduct + 1);
+      return setNumberOfProduct(numberOfProduct + 1);
     } else if (type === "dec" && numberOfProduct > 1) {
-      return setnumberOfProduct(numberOfProduct - 1);
+      return setNumberOfProduct(numberOfProduct - 1);
     }
   };
   const dispatch = useDispatch();

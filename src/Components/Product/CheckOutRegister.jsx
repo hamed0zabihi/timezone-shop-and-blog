@@ -10,16 +10,16 @@ import * as Yup from "yup";
 
 const CheckOutRegister = () => {
   const dispatch = useDispatch();
-  const [loading, setloading] = useState(false);
-  const [isSubscribed, setisSubscribed] = useState(true);
-  const [datauserdispatch, setdatauserdispatch] = useState();
+  const [loading, setLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(true);
+  const [dataUserDispatch, setDataUserDispatch] = useState();
   // for solve error: To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
   useEffect(() => {
-    dispatch(AddUser(datauserdispatch));
+    dispatch(AddUser(dataUserDispatch));
     return () => {
-      setdatauserdispatch();
+      setDataUserDispatch();
     };
-  }, [dispatch, datauserdispatch]);
+  }, [dispatch, dataUserDispatch]);
 
   return (
     <>
@@ -76,7 +76,7 @@ const CheckOutRegister = () => {
                 password: values.password,
                 address: [finaladdress],
               };
-              setloading(true);
+              setLoading(true);
               try {
                 const { status, data } = await RegisterUser(user);
                 if (status === 201 && !isEmpty(data)) {
@@ -86,22 +86,22 @@ const CheckOutRegister = () => {
                   });
 
                   if (isSubscribed) {
-                    setdatauserdispatch(data);
+                    setDataUserDispatch(data);
                     // dispatch(AddUser(data));
                   }
-                  setloading(false);
-                  setisSubscribed(false);
+                  setLoading(false);
+                  setIsSubscribed(false);
                 } else if (status !== 201) {
                   toast.warining("error", {
                     position: "top-right",
                     onClose: true,
                   });
 
-                  setloading(false);
+                  setLoading(false);
                 }
               } catch (exp) {
                 console.log(exp);
-                setloading(false);
+                setLoading(false);
                 toast.error("error", {
                   position: "top-right",
                   onClose: true,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Maps = () => {
-  const [position, setposition] = useState({
+  const [position, setPosition] = useState({
     lat: 35.6997,
     lng: 51.3381,
     zoom: 7,
@@ -12,7 +12,7 @@ const Maps = () => {
     const getLatLong = event.target.getLatLng();
     const getValue = Object.values(getLatLong);
 
-    setposition({
+    setPosition({
       lat: getValue[0].toPrecision(9),
       lng: getValue[1].toPrecision(9),
       zoom: event.target._map._zoom,

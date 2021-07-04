@@ -12,15 +12,17 @@ const OrderBox = ({ user }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [terms, setterms] = useState(false);
-  const [onceSubmited, setonceSubmited] = useState(false);
-  const [paymentMethod, setpaymentMethod] = useState("Paypal");
+  const [onceSubmited, setOnceSubmited] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("Paypal");
   const { cart } = useSelector((state) => state);
-  const [shoppingprice, setshoppingprice] = useState(500);
+  const [shoppingprice, setShoppingPrice] = useState(500);
+
   const handleOrder = async (event) => {
     event.preventDefault();
-    setonceSubmited(true);
+    setOnceSubmited(true);
     const today = new Date();
     console.log("todey", today.toISOString());
+
     const order = {
       total: cart.reduce((x, el) => x + el.price * el.quantity, shoppingprice),
       createdAt: today.toISOString(),
@@ -30,6 +32,7 @@ const OrderBox = ({ user }) => {
       status: "in process",
       shipping: shoppingprice,
     };
+
     try {
       if (user && cart.length && terms) {
         const { status, data } = await createOrder(order, user.id);
@@ -109,7 +112,7 @@ const OrderBox = ({ user }) => {
             name="selector"
             value="googlePayment"
             checked={paymentMethod === "googlePayment"}
-            onChange={(e) => setpaymentMethod(e.target.value)}
+            onChange={(e) => setPaymentMethod(e.target.value)}
           />
           <label htmlFor="f-option5">Check payments</label>
           <div className="check"></div>
@@ -123,7 +126,7 @@ const OrderBox = ({ user }) => {
             name="selector"
             value="Paypal"
             checked={paymentMethod === "Paypal"}
-            onChange={(e) => setpaymentMethod(e.target.value)}
+            onChange={(e) => setPaymentMethod(e.target.value)}
           />
           <label htmlFor="f-option6">Paypal </label>
           <img src="/images/product/single-product/card.jpg" alt="" />

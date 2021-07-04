@@ -11,7 +11,7 @@ import { SetHobby } from "../../Redux/Actions/Products/Hobby";
 
 const CheckOutLogin = () => {
   const dispatch = useDispatch();
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -34,7 +34,7 @@ const CheckOutLogin = () => {
                 .required("Required"),
             })}
             onSubmit={async (values) => {
-              setloading(true);
+              setLoading(true);
               try {
                 const dataUser = {
                   email: values.email,
@@ -45,21 +45,21 @@ const CheckOutLogin = () => {
                   // fake api don't feature for check email- response return an array of objects emails
                   dispatch(AddUser(data[0]));
                   dispatch(SetHobby());
-                  setloading(false);
+                  setLoading(false);
                   toast.success(" login success ", {
                     position: "top-right",
                     onClose: true,
                   });
                 }
                 if (status === 200 && data.length === 0) {
-                  setloading(false);
+                  setLoading(false);
                   toast.error(" user not found ", {
                     position: "top-right",
                     onClose: true,
                   });
                 }
               } catch (exp) {
-                setloading(false);
+                setLoading(false);
                 toast.error("failed", {
                   position: "top-right",
                   onClose: true,

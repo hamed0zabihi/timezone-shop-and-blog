@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 
 const CheckOutBillingDetails = ({ user }) => {
-  const [name, setname] = useState("");
-  const [email, setemail] = useState("");
-  const [country, setcountry] = useState("Iran");
-  const [addressone, setaddressone] = useState("");
-  const [addresstwo, setaddresstwo] = useState("");
-  const [city, setcity] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("Iran");
+  const [addressone, setAddressOne] = useState("");
+  const [addresstwo, setAddressTwo] = useState("");
+  const [city, setCity] = useState("");
 
   useEffect(() => {
-    setname(user.name);
-    setemail(user.email);
-    setcountry(user.address[0].country);
-    setaddressone(user.address[0].addressone);
-    setaddresstwo(user.address[0].addresstwo);
-    setcity(user.address[0].city);
+    setName(user.name);
+    setEmail(user.email);
+    setCountry(user.address[0].country);
+    setAddressOne(user.address[0].addressone);
+    setAddressTwo(user.address[0].addresstwo);
+    setCity(user.address[0].city);
     return () => {
-      setname();
-      setemail();
-      setcountry();
-      setaddressone();
-      setaddresstwo();
-      setcity();
+      setName();
+      setEmail();
+      setCountry();
+      setAddressOne();
+      setAddressTwo();
+      setCity();
     };
   }, [user]);
   return (
