@@ -1,5 +1,6 @@
 import { Animated } from "react-animated-css";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const HomeSlider = () => {
   return (
@@ -41,9 +42,9 @@ const HomeSlider = () => {
                       animationDelay={0.8}
                     >
                       <div className="hero__btn">
-                        <a href="industries.html" className="btn hero-btn">
+                        <Link to="/shop" className="btn hero-btn">
                           Shop Now
-                        </a>
+                        </Link>
                       </div>
                     </Animated>
                   </div>
