@@ -25,7 +25,9 @@ const NewArrival = () => {
               <div key={el.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <div className="single-new-pro mb-30 text-center">
                   <div className="product-img">
-                    <img src={el.image} alt={el.title} />
+                    <Link to={`/product/${el.id}`}>
+                      <img src={el.image} alt={el.title} />
+                    </Link>
                   </div>
                   <div className="product-caption">
                     <h3>

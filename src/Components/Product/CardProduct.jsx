@@ -17,7 +17,9 @@ const CardProduct = ({
     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
       <div className="single-popular-items mb-50 text-center">
         <div className="popular-img">
-          <img src={image} alt={title} />
+          <Link to={`/product/${id}`}>
+            <img src={image} alt={title} />
+          </Link>
           <div
             className="img-cap"
             onClick={() => dispatch(addProductToCart(product))}

@@ -33,7 +33,9 @@ const PopularProducts = () => {
             <div key={el.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div className="single-popular-items mb-50 text-center">
                 <div className="popular-img">
-                  <img src={el.image} alt={el.title} />
+                  <Link to={`/product/${el.id}`}>
+                    <img src={el.image} alt={el.title} />
+                  </Link>
                   <div
                     className="img-cap"
                     onClick={() => dispatch(addProductToCart(el))}
@@ -57,9 +59,9 @@ const PopularProducts = () => {
         {/* <!-- Button --> */}
         <div className="row justify-content-center">
           <div className="room-btn pt-70">
-            <a href="catagori.html" className="btn view-btn1">
+            <Link to="/shop" className="btn view-btn1">
               View More Products
-            </a>
+            </Link>
           </div>
         </div>
       </div>
