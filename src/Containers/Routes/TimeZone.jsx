@@ -25,7 +25,7 @@ const TimeZone = () => {
         <Route path="/search/:query" component={SearchProduct} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <Route path="/product/:id" exact component={SingleProduct} />
+        <Route path="/product/:productId" exact component={SingleProduct} />
         <Route path="/" exact component={Home} />
       </MainLayout>
     </Switch>

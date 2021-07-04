@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 import { GetSelectedProduct } from "../../Redux/Actions/Products/GetSelectedProduct";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import SingleProductDetails from "./SingleProductDetails";
@@ -9,10 +10,11 @@ import SubscribeSection from "./SubscribeSection";
 const SingleProduct = ({ match }) => {
   const dispatch = useDispatch();
   const SelectedProduct = useSelector((state) => state.product);
-
+  const { productId } = useParams();
+  const idProduct = productId;
   useEffect(() => {
-    dispatch(GetSelectedProduct(match.params.id));
-  }, [dispatch, match.params.id]);
+    dispatch(GetSelectedProduct(idProduct));
+  }, [dispatch, idProduct]);
 
   const { id, title, image, price, inventory, description } = {
     ...SelectedProduct[0],

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import ShopMethodContainer from "../Home/ShopMethodContainer";
 import BigHeroTitle from "../Layout/Slider/BigheroTitle";
 import { Paginate } from "../Utils/Paginate";
@@ -7,11 +8,12 @@ import Pagination from "../Utils/Pagination";
 import CardProduct from "./CardProduct";
 import { orderBy, isEmpty } from "lodash";
 
-const SearchProduct = ({ match }) => {
+const SearchProduct = () => {
   const AllProducts = useSelector((state) => state.productsLocal);
   const [filterProducts, setfilterProducts] = useState([]);
   const [searchQuery, setsearchQuery] = useState("");
-  const querySearch = match.params.query;
+  const { query } = useParams();
+  const querySearch = query;
 
   useEffect(() => {
     setsearchQuery(querySearch);
