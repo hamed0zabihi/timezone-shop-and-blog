@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const LogoFooter = () => {
   return (
     <div className="footer-logo">
-      <a href="/#">
+      <Link to="/">
         <img src="/images/logo/logo2_footer.png" alt="" />
-      </a>
+      </Link>
     </div>
   );
 };
