@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FavoriteModalForLogin = ({ modal, toggle }) => {
+  useEffect(() => {
+    modal
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+    return () => (document.body.style.overflow = "unset");
+  }, [modal]);
+
   return (
     <div
       className={modal ? "modal fade show d-block" : "modal fade"}
