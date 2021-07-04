@@ -3,6 +3,7 @@ const Gallery = () => {
   const imageTwo = "./images/gallery/gallery2.png";
   const imageThree = "./images/gallery/gallery3.png";
   const imageFour = "./images/gallery/gallery4.png";
+
   return (
     <div className="gallery-area">
       <div className="container-fluid p-0 fix">
