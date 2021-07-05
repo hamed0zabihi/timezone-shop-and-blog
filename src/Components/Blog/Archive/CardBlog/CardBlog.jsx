@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CardBlog = ({
   id = 1,
   createdAt = "",
@@ -27,9 +29,10 @@ const CardBlog = ({
       </div>
 
       <div className="blog_details">
-        <a className="d-inline-block" href="single-blog.html">
+        <Link to={`/blog/${id}`} className="d-inline-block">
           <h2>{title}</h2>
-        </a>
+        </Link>
+
         <p className="text-justify">{body.slice(0, 140)}...</p>
         <ul className="blog-info-link">
           <li>

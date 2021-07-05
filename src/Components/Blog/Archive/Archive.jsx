@@ -6,7 +6,7 @@ import Pagination from "../../Utils/Pagination";
 import { orderBy } from "lodash";
 
 const Archive = () => {
-  const AllArticles = useSelector((state) => state.article);
+  const AllArticles = useSelector((state) => state.articles);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
