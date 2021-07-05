@@ -2,5 +2,5 @@ import http from "./http";
 import api from "./ApiList.json";
 
 export const getArticlesFromApi = () => {
-  return http.get(`${api.jsonplaceholder}/posts?_limit=20`);
+  return http.get(`${api.mockapi}/article?limit=20`);
 };
