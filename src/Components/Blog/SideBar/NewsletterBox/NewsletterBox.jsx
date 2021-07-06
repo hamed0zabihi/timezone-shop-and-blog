@@ -12,6 +12,13 @@ const NewsletterBox = () => {
         validationSchema={Yup.object({
           email: Yup.string().email().required("required"),
         })}
+        onSubmit={(values, { resetForm, setSubmitting }) => {
+          setTimeout(() => {
+            setSubmitting(false);
+            alert(values.email);
+            resetForm();
+          }, 1500);
+        }}
       >
         <Form>
           <div className="form-group">
