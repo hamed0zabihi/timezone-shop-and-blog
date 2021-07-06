@@ -14,10 +14,10 @@ const SingleBlog = () => {
   useEffect(() => {
     dispatch(GetArticle(idBlog));
   }, [dispatch, idBlog]);
-
+  console.log("article in single blog", article.title);
   return (
     <main>
-      <BigHeroTitle name="Blog details" />
+      <BigHeroTitle name={article.title} />
       <section class="blog_area single-post-area section-padding">
         <div class="container">
           <div class="row">
