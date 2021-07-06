@@ -22,16 +22,11 @@ const SearchBlog = () => {
         "desc"
       )
     );
-  }, [AllArticles, searchQuery]);
+  }, [AllArticles, query, searchQuery]);
 
-  //sorting
-
-  //   if (!isEmpty(filteredArticles)) {
-  //     setFilteredArticles(orderBy( AllArticles.filter((el) => el.title.includes(searchQuery)), "createAt", "desc"));
-  //   }
-  //initial for paginate
+  //paginate
   const [CurrentPage, setCurrentPage] = useState(1);
-  const [PerPage, setPerPage] = useState(5);
+  const PerPage = 5;
 
   //change current page
   const handleCurrentPage = (id) => {
