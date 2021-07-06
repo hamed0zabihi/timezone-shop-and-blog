@@ -1,51 +1,12 @@
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
+import CategoryBox from "./CategoryBox/CategoryBox";
 
 const SideBar = () => {
   return (
     <div className="col-lg-4">
       <div className="blog_right_sidebar">
         <SearchBox />
-        <aside className="single_sidebar_widget post_category_widget">
-          <h4 className="widget_title">Category</h4>
-          <ul className="list cat-list">
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Resaurant food</p>
-                <p>(37)</p>
-              </a>
-            </li>
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Travel news</p>
-                <p>(10)</p>
-              </a>
-            </li>
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Modern technology</p>
-                <p>(03)</p>
-              </a>
-            </li>
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Product</p>
-                <p>(11)</p>
-              </a>
-            </li>
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Inspiration</p>
-                <p>21</p>
-              </a>
-            </li>
-            <li>
-              <a href="/#" className="d-flex">
-                <p>Health Care (21)</p>
-                <p>09</p>
-              </a>
-            </li>
-          </ul>
-        </aside>
+        <CategoryBox />
 
         <aside className="single_sidebar_widget popular_post_widget">
           <h3 className="widget_title">Recent Post</h3>
