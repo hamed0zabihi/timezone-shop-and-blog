@@ -17,7 +17,7 @@ axios.interceptors.response.use(
       error.response.status < 500;
     if (!expectedErrors) {
       console.log("error:", error);
-      toast.error("مشکلی از سمت سرور رخ داده است.", {
+      toast.error("internal server error.please try again later", {
         position: "top-right",
         closeOnClick: true,
       });
