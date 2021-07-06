@@ -21,14 +21,9 @@ const Archive = () => {
     );
   }, [AllArticles, searchQuery]);
 
-  //sorting
-
-  //   if (!isEmpty(filteredArticles)) {
-  //     setFilteredArticles(orderBy( AllArticles.filter((el) => el.title.includes(searchQuery)), "createAt", "desc"));
-  //   }
   //initial for paginate
   const [CurrentPage, setCurrentPage] = useState(1);
-  const [PerPage, setPerPage] = useState(5);
+  const PerPage = 5;
 
   //change current page
   const handleCurrentPage = (id) => {
@@ -56,30 +51,6 @@ const Archive = () => {
             handlePagination={handleCurrentPage}
           />
         </div>
-        {/* <nav className="blog-pagination justify-content-center d-flex">
-          <ul className="pagination">
-            <li className="page-item">
-              <a href="/#" className="page-link" aria-label="Previous">
-                <i className="ti-angle-left"></i>
-              </a>
-            </li>
-            <li className="page-item">
-              <a href="/#" className="page-link">
-                1
-              </a>
-            </li>
-            <li className="page-item active">
-              <a href="/#" className="page-link">
-                2
-              </a>
-            </li>
-            <li className="page-item">
-              <a href="/#" className="page-link" aria-label="Next">
-                <i className="ti-angle-right"></i>
-              </a>
-            </li>
-          </ul>
-        </nav> */}
       </div>
     </div>
   );
