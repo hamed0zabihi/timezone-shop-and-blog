@@ -7,6 +7,7 @@ import Shop from "../../Components/Product/Shop";
 import SingleProduct from "../../Components/Product/SingleProduct";
 import About from "../About/About";
 import Blog from "../Blog/Blog";
+import Search from "../Blog/Search";
 import SingleBlog from "../Blog/Singleblog";
 import Cart from "../Cart/Cart";
 import Contacts from "../Contact/Contacts";
@@ -22,6 +23,7 @@ const TimeZone = () => {
         <Route path="/contacts" component={Contacts} />
         <Route path="/blog" exact component={Blog} />
         <Route path="/blog/:blogId" exact component={SingleBlog} />
+        <Route path="/blog/search/:query" exact component={Search} />
         <Route path="/shop" component={Shop} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={CheckOut} />
