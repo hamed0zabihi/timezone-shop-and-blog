@@ -2,15 +2,20 @@ import { useSelector } from "react-redux";
 
 const TagCloudsBox = () => {
   const AllArticles1 = useSelector((state) => state.articles);
-  const AllCategoryInOneArray = AllArticles1.map((el) => el.tag).flat(1);
-  let uniqueCategories = [...new Set(AllCategoryInOneArray)];
-  const tagUniquePerArticle = uniqueCategories.reduce((acc, tag) => {
+  const AllTagsInOneArray = AllArticles1.map((el) => el.tag).flat(1);
+  //toLowerCase every tag
+  const AllTagsInOneArrayLowerCase = AllTagsInOneArray.map((el) =>
+    el.toLowerCase()
+  );
+  //uniqe Tag
+  let uniqueTags = [...new Set(AllTagsInOneArrayLowerCase)];
+  const tagUniquePerArticle = uniqueTags.reduce((acc, tag) => {
     return [
       ...acc,
       {
         tag,
         productdat: AllArticles1.filter((product) =>
-          product.category.find((cat) => cat === tag)
+          product.category.find((cat) => cat.toLowerCase() === tag)
         ),
       },
     ];
