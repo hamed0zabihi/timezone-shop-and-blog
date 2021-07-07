@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+import moment from "moment";
 
 const RecentPostBox = () => {
   const articles = useSelector((state) => state.articles);
@@ -9,7 +10,6 @@ const RecentPostBox = () => {
     .orderBy("createdAt", "desc")
     .take(5)
     .value();
-  //date
 
   return (
     <aside className="single_sidebar_widget popular_post_widget">
@@ -21,7 +21,7 @@ const RecentPostBox = () => {
             <Link to={`/blog/${el.id}`}>
               <h3>{el.title.slice(0, 20)}...</h3>
             </Link>
-            <p>January 12, 2019</p>
+            <p>{moment(el.createdAt).format("DD MMM YYYY")}</p>
           </div>
         </div>
       ))}
