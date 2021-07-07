@@ -12,6 +12,7 @@
     "formik": "^2.2.9",
     "leaflet": "^1.7.1",
     "loadash": "^1.0.0",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-animated-css": "^1.2.1",
     "react-dom": "^17.0.2",
