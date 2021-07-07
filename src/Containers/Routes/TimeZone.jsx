@@ -9,6 +9,7 @@ import About from "../About/About";
 import Blog from "../Blog/Blog";
 import Search from "../Blog/Search";
 import SearchByCategory from "../Blog/SearchByCategory";
+import SearchByTag from "../Blog/SearchByTag";
 import SingleBlog from "../Blog/Singleblog";
 import Cart from "../Cart/Cart";
 import Contacts from "../Contact/Contacts";
@@ -30,6 +31,7 @@ const TimeZone = () => {
           exact
           component={SearchByCategory}
         />
+        <Route path="/blog/search/tag/:query" exact component={SearchByTag} />
         <Route path="/shop" component={Shop} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={CheckOut} />

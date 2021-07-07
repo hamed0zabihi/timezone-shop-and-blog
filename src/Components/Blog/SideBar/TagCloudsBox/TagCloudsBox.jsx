@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const TagCloudsBox = () => {
   const AllArticles1 = useSelector((state) => state.articles);
@@ -28,7 +29,7 @@ const TagCloudsBox = () => {
       <ul className="list">
         {tagUniquePerArticle.map((el, index) => (
           <li key={index}>
-            <a href="/#">{el.tag}</a>
+            <Link to={`/blog/search/tag/${el.tag}`}>{el.tag}</Link>
           </li>
         ))}
       </ul>
