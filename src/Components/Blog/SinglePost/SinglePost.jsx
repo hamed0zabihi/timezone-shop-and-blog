@@ -1,5 +1,6 @@
 import Comments from "./Comments";
 import CommentForm from "./CommentForm/CommentForm";
+import { Link } from "react-router-dom";
 
 const SinglePost = ({
   title = "Google inks pact for new 35-storey office",
@@ -13,7 +14,7 @@ const SinglePost = ({
   comments = [],
 }) => {
   const date = new Date(createdAt);
-  const month = date.toLocaleString("default", { month: "short" });
+
   return (
     <div className="col-lg-8 posts-list">
       <div className="single-post">
@@ -24,15 +25,15 @@ const SinglePost = ({
           <h2>{title}</h2>
           <ul className="blog-info-link mt-3 mb-4">
             <li>
-              <a href="/#">
-                <i className="fa fa-user"></i>{" "}
-                {category.map((el, i) => (
-                  <span key={i}> {el} </span>
-                ))}
-              </a>
+              <i className="fa fa-user"></i>
+              {category.map((el, i) => (
+                <Link to={`/blog/search/category/${el.toLowerCase()}`} key={i}>
+                  <span> {el} </span>
+                </Link>
+              ))}
             </li>
             <li>
-              <a href="/#">
+              <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-comments"></i> {comments.length} Comments
               </a>
             </li>
@@ -46,35 +47,35 @@ const SinglePost = ({
           <p className="like-info">
             <span className="align-middle">
               <i className="fa fa-heart"></i>
-            </span>{" "}
+            </span>
             Lily and 4 people like this
           </p>
           <div className="col-sm-4 text-center my-2 my-sm-0">
             <p className="comment-count">
               <span className="align-middle">
                 <i className="fa fa-comment"></i>
-              </span>{" "}
+              </span>
               {comments.length} Comments
             </p>
           </div>
           <ul className="social-icons">
             <li>
-              <a href="/#">
+              <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fab fa-dribbble"></i>
               </a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fab fa-behance"></i>
               </a>
             </li>
@@ -84,7 +85,7 @@ const SinglePost = ({
           <div className="row">
             <div className="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
               <div className="thumb">
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <img
                     className="img-fluid"
                     src="/images/post/preview.png"
@@ -93,13 +94,13 @@ const SinglePost = ({
                 </a>
               </div>
               <div className="arrow">
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <span className="lnr text-white ti-arrow-left"></span>
                 </a>
               </div>
               <div className="detials">
                 <p>Prev Post</p>
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <h4>Space The Final Frontier</h4>
                 </a>
               </div>
@@ -107,17 +108,17 @@ const SinglePost = ({
             <div className="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
               <div className="detials">
                 <p>Next Post</p>
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <h4>Telescopes 101</h4>
                 </a>
               </div>
               <div className="arrow">
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <span className="lnr text-white ti-arrow-right"></span>
                 </a>
               </div>
               <div className="thumb">
-                <a href="/#">
+                <a href="/#" onClick={(e) => e.preventDefault()}>
                   <img
                     className="img-fluid"
                     src="/images/post/next.png"
@@ -133,7 +134,7 @@ const SinglePost = ({
         <div className="media align-items-center">
           <img src={authorAvatar} alt={author} />
           <div className="media-body">
-            <a href="/#">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <h4>{author}</h4>
             </a>
             <p>

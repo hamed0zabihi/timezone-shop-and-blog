@@ -15,16 +15,16 @@ const FooterBottom = () => {
       <div className="col-xl-5 col-lg-4 col-md-5">
         <div className="footer-copy-right f-right">
           <div className="footer-social">
-            <a href="/#">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://www.facebook.com/sai4ull">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="/#">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <i className="fab fa-behance"></i>
             </a>
-            <a href="/#">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <i className="fas fa-globe"></i>
             </a>
           </div>

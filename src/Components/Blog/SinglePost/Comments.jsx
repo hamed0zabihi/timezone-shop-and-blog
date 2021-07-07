@@ -16,9 +16,15 @@ const Comments = ({
           <div className="desc">
             <p className="comment">{comment}</p>
             <div className="d-flex justify-content-between">
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center ">
                 <h5>
-                  <a href="/#">{name}</a>
+                  <a
+                    href="/#"
+                    className="text-dark"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    {name}
+                  </a>
                 </h5>
                 <p className="date">{month}</p>
               </div>

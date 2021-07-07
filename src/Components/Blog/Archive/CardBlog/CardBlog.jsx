@@ -36,12 +36,12 @@ const CardBlog = ({
         <p className="text-justify">{body.slice(0, 140)}...</p>
         <ul className="blog-info-link">
           <li>
-            <a href="/#">
-              <i className="fa fa-user"></i>{" "}
-              {category.map((el, i) => (
-                <span key={i}> {el} </span>
-              ))}
-            </a>
+            <i className="fa fa-user"></i>{" "}
+            {category.map((el, i) => (
+              <Link to={`/blog/search/category/${el.toLowerCase()}`} key={i}>
+                <span> {el} </span>
+              </Link>
+            ))}
           </li>
           <li>
             <a href="/#" onClick={(e) => e.preventDefault()}>

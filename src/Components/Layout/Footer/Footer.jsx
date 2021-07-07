@@ -1,5 +1,6 @@
 import FooterBottom from "./FooterBottom";
 import LogoFooter from "./LogoFooter";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -30,16 +31,20 @@ const Footer = () => {
                     <h4>Quick Links</h4>
                     <ul>
                       <li>
-                        <a href="/#">About</a>
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
-                        <a href="/#"> Offers & Discounts</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Offers & Discounts
+                        </a>
                       </li>
                       <li>
-                        <a href="/#"> Get Coupon</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Get Coupon
+                        </a>
                       </li>
                       <li>
-                        <a href="/#"> Contact Us</a>
+                        <Link to="/contacts">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -51,16 +56,26 @@ const Footer = () => {
                     <h4>New Products</h4>
                     <ul>
                       <li>
-                        <a href="/#">Woman Cloth</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Woman Cloth
+                        </a>
                       </li>
                       <li>
-                        <a href="/#">Fashion Accessories</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Fashion Accessories
+                        </a>
                       </li>
                       <li>
-                        <a href="/#"> Man Accessories</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          {" "}
+                          Man Accessories
+                        </a>
                       </li>
                       <li>
-                        <a href="/#"> Rubber made Toys</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          {" "}
+                          Rubber made Toys
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -72,16 +87,24 @@ const Footer = () => {
                     <h4>Support</h4>
                     <ul>
                       <li>
-                        <a href="/#">Frequently Asked Questions</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Frequently Asked Questions
+                        </a>
                       </li>
                       <li>
-                        <a href="/#">Terms & Conditions</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Terms & Conditions
+                        </a>
                       </li>
                       <li>
-                        <a href="/#">Privacy Policy</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Privacy Policy
+                        </a>
                       </li>
                       <li>
-                        <a href="/#">Report a Payment Issue</a>
+                        <a href="/#" onClick={(e) => e.preventDefault()}>
+                          Report a Payment Issue
+                        </a>
                       </li>
                     </ul>
                   </div>

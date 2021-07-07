@@ -8,7 +8,8 @@ const Video = () => {
               <div className="play-btn ">
                 <a
                   className="popup-video"
-                  href="https://www.youtube.com/watch?v=KMc6DyEJp04"
+                  href="/#"
+                  onClick={(e) => e.preventDefault()}
                 >
                   <i className="fas fa-play"></i>
                 </a>
@@ -19,7 +20,7 @@ const Video = () => {
         <div className="thumb-content-box">
           <div className="thumb-content">
             <h3>Next Video</h3>
-            <a href="/#">
+            <a href="/#" onClick={(e) => e.preventDefault()}>
               <i className="flaticon-arrow"></i>
             </a>
           </div>
