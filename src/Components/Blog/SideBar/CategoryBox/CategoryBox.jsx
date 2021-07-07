@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CategoryBox = () => {
   const AllArticles1 = useSelector((state) => state.articles);
@@ -25,12 +26,15 @@ const CategoryBox = () => {
     <aside className="single_sidebar_widget post_category_widget">
       <h4 className="widget_title">Category</h4>
       <ul className="list cat-list">
-        {p.map((elb, index) => (
+        {p.map((el, index) => (
           <li key={index}>
-            <a href="/#" className="d-flex">
-              <p>{elb.category}</p>
-              <p>({elb.productdat.length})</p>
-            </a>
+            <Link
+              to={`/blog/search/category/${el.category}`}
+              className="d-flex"
+            >
+              <p>{el.category}</p>
+              <p>({el.productdat.length})</p>
+            </Link>
           </li>
         ))}
       </ul>
