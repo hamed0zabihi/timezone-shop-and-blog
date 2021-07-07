@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 const CategoryBox = () => {
   const AllArticles1 = useSelector((state) => state.articles);
-
   const AllCategoryInOneArray = AllArticles1.map((el) => el.category).flat(1);
   let uniqueCategories = [...new Set(AllCategoryInOneArray)];
   const p = uniqueCategories.reduce((acc, category) => {
