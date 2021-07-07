@@ -1,32 +1,31 @@
+import { useSelector } from "react-redux";
+
 const TagCloudsBox = () => {
+  const AllArticles1 = useSelector((state) => state.articles);
+  const AllCategoryInOneArray = AllArticles1.map((el) => el.tag).flat(1);
+  let uniqueCategories = [...new Set(AllCategoryInOneArray)];
+  const tagUniquePerArticle = uniqueCategories.reduce((acc, tag) => {
+    return [
+      ...acc,
+      {
+        tag,
+        productdat: AllArticles1.filter((product) =>
+          product.category.find((cat) => cat === tag)
+        ),
+      },
+    ];
+  }, []);
+  console.log("tag unique", tagUniquePerArticle);
+
   return (
     <aside className="single_sidebar_widget tag_cloud_widget">
       <h4 className="widget_title">Tag Clouds</h4>
       <ul className="list">
-        <li>
-          <a href="/#">project</a>
-        </li>
-        <li>
-          <a href="/#">love</a>
-        </li>
-        <li>
-          <a href="/#">technology</a>
-        </li>
-        <li>
-          <a href="/#">travel</a>
-        </li>
-        <li>
-          <a href="/#">restaurant</a>
-        </li>
-        <li>
-          <a href="/#">life style</a>
-        </li>
-        <li>
-          <a href="/#">design</a>
-        </li>
-        <li>
-          <a href="/#">illustration</a>
-        </li>
+        {tagUniquePerArticle.map((el, index) => (
+          <li key={index}>
+            <a href="/#">{el.tag}</a>
+          </li>
+        ))}
       </ul>
     </aside>
   );
