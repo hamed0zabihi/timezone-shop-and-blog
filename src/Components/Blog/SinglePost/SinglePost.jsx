@@ -1,10 +1,11 @@
 import Comments from "./Comments";
+import CommentForm from "./CommentForm/CommentForm";
 
 const SinglePost = ({
   title = "Google inks pact for new 35-storey office",
   image = "/images/blog/single_blog_1.png",
   createdAt,
-  body = "      MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually",
+  body = "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually",
   author,
   authorAvatar = "/images/blog/author.png",
   category = [],
@@ -151,67 +152,7 @@ const SinglePost = ({
       </div>
       <div className="comment-form">
         <h4>Leave a Reply</h4>
-        <form
-          className="form-contact comment_form"
-          action="/#"
-          id="commentForm"
-        >
-          <div className="row">
-            <div className="col-12">
-              <div className="form-group">
-                <textarea
-                  className="form-control w-100"
-                  name="comment"
-                  id="comment"
-                  cols="30"
-                  rows="9"
-                  placeholder="Write Comment"
-                ></textarea>
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <div className="form-group">
-                <input
-                  className="form-control"
-                  name="name"
-                  id="name"
-                  type="text"
-                  placeholder="Name"
-                />
-              </div>
-            </div>
-            <div className="col-sm-6">
-              <div className="form-group">
-                <input
-                  className="form-control"
-                  name="email"
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-            <div className="col-12">
-              <div className="form-group">
-                <input
-                  className="form-control"
-                  name="website"
-                  id="website"
-                  type="text"
-                  placeholder="Website"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="form-group">
-            <button
-              type="submit"
-              className="button button-contactForm btn_1 boxed-btn"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
+        <CommentForm />
       </div>
     </div>
   );
