@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LoginUser } from "../../Server/User";
 import BigHeroTitle from "../../Components/Layout/Slider/BigheroTitle";
@@ -14,6 +14,7 @@ import { SetHobby } from "../../Redux/Actions/Products/Hobby";
 const Login = () => {
   const dispatch = useDispatch();
   const userIsExist = useSelector((state) => state.user);
+  let history = useHistory();
   const [loading, setLoading] = useState(false);
 
   return (
@@ -98,6 +99,7 @@ const Login = () => {
                                 dispatch(AddUser(data[0]));
                                 dispatch(SetHobby());
                                 setLoading(false);
+                                history.replace("/");
                               }
                               if (status === 200 && data.length === 0) {
                                 toast.error(" user not found ", {

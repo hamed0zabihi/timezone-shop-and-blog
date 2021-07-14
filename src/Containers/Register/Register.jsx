@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { isEmpty } from "lodash";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useHistory } from "react-router";
 import { RegisterUser } from "../../Server/User";
 import { AddUser } from "../../Redux/Actions/User";
 import PreLoadings from "../../Components/Utils/PreLoadings";
 import BigHeroTitle from "../../Components/Layout/Slider/BigheroTitle";
-import { isEmpty } from "lodash";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
 import * as Yup from "yup";
 
 const Register = () => {
@@ -14,6 +16,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(true);
+  let history = useHistory();
 
   return (
     <>
@@ -101,6 +104,7 @@ const Register = () => {
                           }
                           setLoading(false);
                           setIsSubscribed(false);
+                          history.replace("/");
                         } else if (status !== 201) {
                           toast.warining("error", {
                             position: "top-right",
