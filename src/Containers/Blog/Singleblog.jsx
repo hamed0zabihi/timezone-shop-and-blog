@@ -18,9 +18,9 @@ const SingleBlog = () => {
   return (
     <main>
       <BigHeroTitle name={article.title} />
-      <section class="blog_area single-post-area section-padding">
-        <div class="container">
-          <div class="row">
+      <section className="blog_area single-post-area section-padding">
+        <div className="container">
+          <div className="row">
             <SinglePost {...article} />
             <SideBar />
           </div>
