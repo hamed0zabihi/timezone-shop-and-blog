@@ -1,7 +1,6 @@
-import React from "react";
 import Slider from "react-slick";
 
-const SingleProductSlider = () => {
+const SingleProductSlider = ({ images = [] }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -51,34 +50,23 @@ const SingleProductSlider = () => {
       },
     ],
   };
+
   return (
     <div className="col-lg-12">
       <div className="product_img_slide owl-carousel">
         <Slider {...settings}>
-          <div>
-            <img
-              style={{ width: "100%" }}
-              src="/images/gallery/gallery01.png"
-              alt="#"
-              className="img-fluid"
-            />
-          </div>
-          <div style={{ width: "100%" }}>
-            <img
-              src="/images/gallery/gallery1.png"
-              alt="#"
-              className="img-fluid"
-              style={{ width: "100%" }}
-            />
-          </div>
-          <div>
-            <img
-              style={{ width: "100%" }}
-              src="/images/gallery/gallery01.png"
-              alt="#"
-              className="img-fluid"
-            />
-          </div>
+          {images.map((el, index) => {
+            return (
+              <div key={index}>
+                <img
+                  style={{ width: "100%" }}
+                  src={`${el}`}
+                  alt="#"
+                  className="img-fluid"
+                />
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </div>

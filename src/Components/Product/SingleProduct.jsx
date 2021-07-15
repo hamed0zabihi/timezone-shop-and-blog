@@ -16,7 +16,7 @@ const SingleProduct = ({ match }) => {
     dispatch(GetSelectedProduct(idProduct));
   }, [dispatch, idProduct]);
 
-  const { id, title, image, price, inventory, description } = {
+  const { id, title, image, imageGallery, price, inventory, description } = {
     ...SelectedProduct[0],
   };
 
@@ -26,7 +26,7 @@ const SingleProduct = ({ match }) => {
       <div className="product_image_area">
         <div className="container">
           <div className="row justify-content-center">
-            <SingleProductSlider />
+            <SingleProductSlider images={imageGallery} />
             <SingleProductDetails
               id={id}
               title={title}
