@@ -21,7 +21,10 @@ const Shop = () => {
   const [sortingMode, setSortingMode] = useState("");
   //set currentpage
   const handleCurrentPage = (id) => {
-    return setCurrentPage(id);
+    return [
+      document.getElementById("nav-tab").scrollIntoView({ behavior: "smooth" }),
+      setCurrentPage(id),
+    ];
   };
   //set perpage
   const handlePerPageg = (id) => {

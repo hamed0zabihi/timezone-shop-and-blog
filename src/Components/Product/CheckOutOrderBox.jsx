@@ -15,7 +15,8 @@ const OrderBox = ({ user }) => {
   const [onceSubmited, setOnceSubmited] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("Paypal");
   const { cart } = useSelector((state) => state);
-  const [shoppingprice, setShoppingPrice] = useState(500);
+  //it will be dynamiced from Api
+  const shoppingprice = 500;
 
   const handleOrder = async (event) => {
     event.preventDefault();

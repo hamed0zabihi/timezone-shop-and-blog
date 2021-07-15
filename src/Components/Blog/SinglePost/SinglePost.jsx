@@ -1,6 +1,7 @@
 import Comments from "./Comments";
 import CommentForm from "./CommentForm/CommentForm";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const SinglePost = ({
   title = "Google inks pact for new 35-storey office",
@@ -13,8 +14,6 @@ const SinglePost = ({
   tag = [],
   comments = [],
 }) => {
-  const date = new Date(createdAt);
-
   return (
     <div className="col-lg-8 posts-list">
       <div className="single-post">
@@ -35,6 +34,12 @@ const SinglePost = ({
             <li>
               <a href="/#" onClick={(e) => e.preventDefault()}>
                 <i className="fa fa-comments"></i> {comments.length} Comments
+              </a>
+            </li>
+            <li>
+              <a href="/#" onClick={(e) => e.preventDefault()}>
+                <i className="fa fa-calender"></i>{" "}
+                {moment(createdAt).format("DD MMM YYYY")}
               </a>
             </li>
           </ul>
