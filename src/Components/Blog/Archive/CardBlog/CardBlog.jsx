@@ -21,7 +21,8 @@ const CardBlog = ({
       <div className="blog_item_img">
         {/* <img className="card-img rounded-0" src={image} alt={title} /> */}
         <Suspense>
-          <Image src={image} alt={title} />
+          {/* <Image src={image} alt={title} /> */}
+           <img className="card-img rounded-0" src={image} alt={title} />
         </Suspense>
         <a
           href="/#"
