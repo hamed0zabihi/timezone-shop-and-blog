@@ -1,5 +1,6 @@
+import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
-import React from "react";
+import Image from "../../../Utils/Image";
 
 const CardBlog = ({
   id = 1,
@@ -18,7 +19,10 @@ const CardBlog = ({
   return (
     <article className="blog_item">
       <div className="blog_item_img">
-        <img className="card-img rounded-0" src={image} alt={title} />
+        {/* <img className="card-img rounded-0" src={image} alt={title} /> */}
+        <Suspense>
+          <Image src={image} alt={title} />
+        </Suspense>
         <a
           href="/#"
           className="blog_item_date"
