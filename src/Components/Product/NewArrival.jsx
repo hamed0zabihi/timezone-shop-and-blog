@@ -1,6 +1,8 @@
+import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+import Image from "../Utils/Image";
 
 const NewArrival = () => {
   const AllProducts = useSelector((state) => state.productsLocal);
@@ -26,7 +28,10 @@ const NewArrival = () => {
                 <div className="single-new-pro mb-30 text-center">
                   <div className="product-img">
                     <Link to={`/product/${el.id}`}>
-                      <img src={el.image} alt={el.title} />
+                      {/* <img src={el.image} alt={el.title} /> */}
+                      <Suspense>
+                        <Image src={el.image} />
+                      </Suspense>
                     </Link>
                   </div>
                   <div className="product-caption">
