@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { Link } from "react-router-dom";
-import Image from "../../../Utils/Image";
-
+import Images from "../../../Utils/Image";
+import PreLoadings from "../../../Utils/PreLoadings";
 const CardBlog = ({
   id = 1,
   createdAt = "",
-  image = "",
+  image,
   title = "Google inks pact for new 35-storey office",
   body = "  That dominion stars lights dominion divide years for fourth have don stars is that he earth it first without heaven in place seed it second morning saying.",
   category = ["Travel", "Lifestyle"],
@@ -20,9 +20,9 @@ const CardBlog = ({
     <article className="blog_item">
       <div className="blog_item_img">
         {/* <img className="card-img rounded-0" src={image} alt={title} /> */}
-        <Suspense>
-          {/* <Image src={image} alt={title} /> */}
-           <img className="card-img rounded-0" src={image} alt={title} />
+        <Suspense fallback={<PreLoadings />}>
+          <Images image={image} />
+          <img className="card-img rounded-0" src={image} alt={title} />
         </Suspense>
         <a
           href="/#"

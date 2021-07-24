@@ -2,6 +2,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers["Access-Control-Allow-Origin"] = "*";
+axios.defaults.headers["Access-Control-Allow-Methods"] =
+  "GET, POST, PUT, DELETE";
+axios.defaults.headers["Access-Control-Allow-Credentials"] = true;
+axios.defaults.headers["crossorigin"] = true;
 axios.interceptors.response.use(
   (response) => {
     if (response.status === 200 || response.status === 201) {
