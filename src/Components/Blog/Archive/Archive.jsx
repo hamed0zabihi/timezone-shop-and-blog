@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Paginate } from "../../Utils/Paginate";
 import CardBlog from "./CardBlog/CardBlog";
-import CardBlogTest from "./CardBlog/CardBlogTest";
 import Pagination from "../../Utils/Pagination";
 import { orderBy } from "lodash";
 
@@ -39,12 +38,12 @@ const Archive = () => {
   return (
     <div className="col-lg-8 mb-5 mb-lg-0">
       <div className="blog_left_sidebar">
-        {/* {ArticlesPaginated.map((el, i) => (
+        {ArticlesPaginated.map((el, i) => (
           <div key={i}>
             <CardBlog {...el} />
           </div>
-                ))} */}
-        <CardBlogTest articles={ArticlesPaginated} />
+        ))}
+        {/* <CardBlog articles={ArticlesPaginated} /> */}
 
         <div className="row justify-content-center  mt-70">
           <Pagination

@@ -1,9 +1,7 @@
-import React, { Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 import Favorite from "./Favorite";
-import Image from "../Utils/Image";
 
 const CardProduct = ({
   title = "Thermo Ball Etip Gloves",
@@ -20,10 +18,7 @@ const CardProduct = ({
       <div className="single-popular-items mb-50 text-center">
         <div className="popular-img">
           <Link to={`/product/${id}`}>
-            <Suspense>
-              <Image src={image} alt={title} />
-            </Suspense>
-            {/* <img src={image} alt={title} /> */}
+            <img src={image} alt={title} />
           </Link>
           <div
             className="img-cap"

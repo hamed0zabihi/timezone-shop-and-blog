@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +5,6 @@ import { addProductToCart } from "../../Redux/Actions/Products/Cart";
 import { useState } from "react";
 import FavoriteModalForLogin from "./FavoriteModalForLogin";
 import Favorite from "./Favorite";
-import Image from "../Utils/Image";
 
 const PopularProducts = () => {
   const AllProducts = useSelector((state) => state.productsLocal);
@@ -46,9 +44,7 @@ const PopularProducts = () => {
                 <div className="single-popular-items mb-50 text-center">
                   <div className="popular-img">
                     <Link to={`/product/${el.id}`}>
-                      <Suspense>
-                        <Image src={el.image} alt={el.title} />
-                      </Suspense>
+                      <img src={el.image} alt={el.title} />
                     </Link>
                     <div
                       className="img-cap"

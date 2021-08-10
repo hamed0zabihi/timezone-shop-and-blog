@@ -22,10 +22,6 @@ const SearchProduct = () => {
     );
   }, [AllProducts, querySearch]);
 
-  console.log("AllProducts,", AllProducts);
-  console.log("searchQuery", searchQuery);
-  console.log("params", querySearch);
-  console.log("filterProducts,", filterProducts);
   const [CurrentPage, setCurrentPage] = useState(1);
   const [PerPage, setPerPage] = useState(6);
   const [sortingMode, setsortingMode] = useState("");
