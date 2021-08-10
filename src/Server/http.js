@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers["Access-Control-Allow-Origin"] = "*";
 axios.defaults.headers["Access-Control-Allow-Methods"] =
   "GET, POST, PUT, DELETE";
