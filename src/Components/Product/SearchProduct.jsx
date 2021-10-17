@@ -18,7 +18,9 @@ const SearchProduct = () => {
   useEffect(() => {
     setSearchQuery(querySearch);
     setFilterProducts(
-      AllProducts.filter((el) => el.title.includes(querySearch))
+      AllProducts.filter((el) =>
+        el.title.toLowerCase().includes(querySearch.toLowerCase())
+      )
     );
   }, [AllProducts, querySearch]);
 
